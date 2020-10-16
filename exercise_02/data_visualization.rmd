@@ -1,0 +1,46 @@
+---
+title: Exercise02 - Computational Genomics"
+output: html_notebook
+Author: Adria Cabello Blanque
+---
+
+```{r}
+a<-getwd()
+
+setwd(a)
+
+# then assuming you use R command-line shell from the terminal... ;^D
+
+# example here for Ecol and window length equal to 100bp
+
+GC_avg <- 50.79; # the whole genome average GC content
+
+ZZ <- gzfile('stats/Ecol_genomegcanalysis_wlen100.tbl.gz');
+GC_w100 <- read.table(ZZ, header=FALSE);
+colnames(GC_w100) <- c("CHRid","NUCpos","GCpct");
+
+summary(GC_w100)
+#>        CHRid           NUCpos            GCpct      
+#>  NC_000913:92832   Min.   :     50   Min.   :15.00  
+#>                    1st Qu.:1160438   1st Qu.:47.00  
+#>                    Median :2320825   Median :52.00  
+#>                    Mean   :2320825   Mean   :50.79 (*)
+#>                    3rd Qu.:3481212   3rd Qu.:56.00  
+#>                    Max.   :4641600   Max.   :78.00
+# mean of all GCpct (*) should be closer to the whole genome average GC, should it?
+
+library(ggplot2);
+
+G <- ggplot(GC_w100, aes(x=NUCpos, y=GCpct)) +
+        geom_line(colour = "blue") +
+        theme_bw() +
+        geom_hline(yintercept=GC_avg, colour="red", linetype="dashed", size=1.5) +
+        ggtitle("E.coli GC content over the genome (window length = 100bp)") +
+        labs(x="Genomic Coords (bp)", y="%GC Content");
+
+ggsave("images/Ecol_genomegcanalysis_wlen100.png", plot=G, width=25, height=8, units="cm", dpi=600);
+```
+
+
+Include here a figure combining the plots for the set of window lengths (100, 200, 500, 1000, 2000, 5000, and 10000). Then choose one of those windows lengths and provide the commands to analyze the other three genomic sequences. After that, you can include another figure stacking the results for that window length on all the genomes.
+

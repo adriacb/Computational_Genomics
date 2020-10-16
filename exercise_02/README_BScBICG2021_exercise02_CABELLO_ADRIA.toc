@@ -1,0 +1,16 @@
+\contentsline {section}{\numberline {1}Introduction}{1}{section.1}
+\contentsline {subsection}{\numberline {1.1}Objectives}{1}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Prerequisites}{1}{subsection.1.2}
+\contentsline {subsubsection}{\numberline {1.2.1}Installing required software}{1}{subsubsection.1.2.1}
+\contentsline {subsubsection}{\numberline {1.2.2}Initializing the main report files}{2}{subsubsection.1.2.2}
+\contentsline {section}{\numberline {2}Calculating Genome Sequence Properties}{3}{section.2}
+\contentsline {subsection}{\numberline {2.1}Datasets}{3}{subsection.2.1}
+\contentsline {section}{\numberline {3}available functions}{4}{section.3}
+\contentsline {subsection}{\numberline {3.1}Analysis of \emph {k}-mer composition}{6}{subsection.3.1}
+\contentsline {section}{\numberline {4}Discussion}{7}{section.4}
+\contentsline {section}{\numberline {5}Appendices}{8}{section.5}
+\contentsline {subsection}{\numberline {5.1}Software}{8}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}Supplementary files}{8}{subsection.5.2}
+\contentsline {subsubsection}{\numberline {5.2.1}Project specific scripts}{8}{subsubsection.5.2.1}
+\contentsline {subsubsection}{\numberline {5.2.2}Shell global vars and settings for this project}{8}{subsubsection.5.2.2}
+\contentsline {subsection}{\numberline {5.3}About this document}{10}{subsection.5.3}
