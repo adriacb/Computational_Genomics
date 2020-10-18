@@ -1,0 +1,15 @@
+%\input{images/winlength}
+%
+
+\begin{figure}[!h]
+\begin{center}{c}
+ \includegraphics[width=0.5\linewidth]{{images/Ecol_genomegcanalysis_wlen2000}.png}\\
+ \includegraphics[width=0.5\linewidth]{{images/Bsub_genomegcanalysis_wlen2000}.png}\\
+ \includegraphics[width=0.5\linewidth]{{images/Mgen_genomegcanalysis_wlen2000}.png}\\
+ \includegraphics[width=0.5\linewidth]{{images/Mpne_genomegcanalysis_wlen2000}.png}\\
+\end{center}
+
+\caption[\cele\ Windows analysis of M.gen. for different sizes.]{%
+  \label{fig:winlength}\textbf{\cele\ Windows size analysis.}
+}%
+\end{figure}

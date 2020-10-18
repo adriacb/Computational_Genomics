@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.10.1)  15 OCT 2020 15:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.10.1)  18 OCT 2020 17:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -908,7 +908,11 @@ less on input line 145.
 Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
 less on input line 146.
 
-(./README_BScBICG2021_exercise02_CABELLO_ADRIA.aux)
+(./README_BScBICG2021_exercise02_CABELLO_ADRIA.aux
+
+LaTeX Warning: Label `tbl:genbankgenomesinfo' multiply defined.
+
+)
 \openout1 = `README_BScBICG2021_exercise02_CABELLO_ADRIA.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 183.
@@ -926,8 +930,7 @@ LaTeX Font Info:    ... okay on input line 183.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 183.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 183.
 
-
-(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
+ (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 183.
@@ -1088,7 +1091,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-<docs/ESCI_logo.png, id=69, 401.5pt x 180.675pt>
+<docs/ESCI_logo.png, id=81, 401.5pt x 180.675pt>
 File: docs/ESCI_logo.png Graphic file (type png)
 <use docs/ESCI_logo.png>
 Package pdftex.def Info: docs/ESCI_logo.png  used on input line 209.
@@ -1151,879 +1154,493 @@ Package pdftex.def Info: docs/ESCI_logo.png  used on input line 391.
 (pdftex.def)             Requested size: 18.48944pt x 18.4931pt.
  [2]
 (./docs/tbl_genbank_summary_info_genomes.tex
+
+! LaTeX Error: Unknown float option `c'.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4 \begin{table}[!tch]
+                       
+? 
+
 Overfull \hbox (151.55997pt too wide) in paragraph at lines 6--13
-[][] 
+ [][] 
  []
 
 )
-
-! LaTeX Error: Lonely \item--perhaps a missing list environment.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.410 
-      
-? 
-
-Underfull \hbox (badness 10000) detected at line 410
-[][]
- []
-
-
-! LaTeX Error: Lonely \item--perhaps a missing list environment.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.420 
-      
-? 
-
-Underfull \hbox (badness 10000) detected at line 420
-[][]
- []
-
-
-! LaTeX Error: Lonely \item--perhaps a missing list environment.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.422 \item M
-             ycoplasmas carry the smallest genomes of self-replicating cells...
-
-? 
-
-Underfull \hbox (badness 10000) detected at line 422
-[][]
- []
-
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 422.
+(Font)              <8> on input line 424.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 422.
+(Font)              <6> on input line 424.
+File: docs/ESCI_logo.png Graphic file (type png)
+<use docs/ESCI_logo.png>
+Package pdftex.def Info: docs/ESCI_logo.png  used on input line 474.
+(pdftex.def)             Requested size: 18.48944pt x 18.4931pt.
+ [3]
+File: docs/ESCI_logo.png Graphic file (type png)
+<use docs/ESCI_logo.png>
+Package pdftex.def Info: docs/ESCI_logo.png  used on input line 550.
+(pdftex.def)             Requested size: 18.48944pt x 18.4931pt.
+ [4] (./images/chaosplot.tex
 
-! LaTeX Error: Lonely \item--perhaps a missing list environment.
+! LaTeX Error: Environment subfigure undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.423 \item \href
-                 {https://www.ncbi.nlm.nih.gov/genome/?term=mycoplasma+pneum...
-
+l.6   \begin{subfigure}
+                       [A]{\textwidth}
 ? 
+! Missing number, treated as zero.
+<to be read again> 
+                   }
+l.6   \begin{subfigure}[A]{\textwidth}
+                                      
+? 
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   }
+l.6   \begin{subfigure}[A]{\textwidth}
+                                      
+? 
+<images/Ecol_chaosplot.1.png, id=193, 602.25pt x 451.6875pt>
+File: images/Ecol_chaosplot.1.png Graphic file (type png)
+<use images/Ecol_chaosplot.1.png>
+Package pdftex.def Info: images/Ecol_chaosplot.1.png  used on input line 8.
+(pdftex.def)             Requested size: 204.85672pt x 153.64063pt.
 
-Underfull \hbox (badness 10000) detected at line 423
-[][]
- []
-
-
-! LaTeX Error: \begin{document} ended by \end{itemize}.
+! LaTeX Error: \begin{figure} on input line 4 ended by \end{subfigure}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.424 \end{itemize}
-                   
-? 
-! Extra \endgroup.
-<recently read> \endgroup 
-                          
-l.424 \end{itemize}
-                   
-? 
-! You can't use `macro parameter character #' in horizontal mode.
-l.429 #
-        IMPORTANT: ensure that your WDR variable definition in projectvars.sh
-? 
-! You can't use `macro parameter character #' in horizontal mode.
-l.430 #
-                   does not contain a path having white-spaces on the folder...
-
-? 
-! You can't use `macro parameter character #' in horizontal mode.
-l.434 #
-        You can also add the previous var definition to your 'projectvars.sh...
-
-? 
-! You can't use `macro parameter character #' in horizontal mode.
-l.435 #
-        so it will be saved and can be easily reused when sourcing the file ...
-
-? 
-! You can't use `macro parameter character #' in vertical mode.
-l.437 #
-        Downloading the Ecol genome in GenBank format
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.441      -O $DT/Ecol_
-                       referencegenome.gb.gz
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.442 
-      
+l.9   \end{subfigure}
+                     
 ? 
 
-Underfull \hbox (badness 3503) in paragraph at lines 440--442
-[]\T1/lmr/m/n/10 (+20) wget $\OML/lmm/m/it/10 GBFTP=GCF=\OT1/lmr/m/n/10 (+20) 0
-00\OML/lmm/m/it/10 =\OT1/lmr/m/n/10 (+20) 005\OML/lmm/m/it/10 =\OT1/lmr/m/n/10 
-(+20) 845\OML/lmm/m/it/10 =GCF[]\OT1/lmr/m/n/10 (+20) 00005845\OML/lmm/m/it/10 
-:\OT1/lmr/m/n/10 (+20) 2[]\OML/lmm/m/it/10 SM\OT1/lmr/m/n/10 (+20) 584\OML/lmm/
-m/it/10 v\OT1/lmr/m/n/10 (+20) 2\OML/lmm/m/it/10 =GCF[]\OT1/lmr/m/n/10 (+20) 00
-005845\OML/lmm/m/it/10 :\OT1/lmr/m/n/10 (+20) 2[]\OML/lmm/m/it/10 SM\OT1/lmr/m/
-n/10 (+20) 584\OML/lmm/m/it/10 v\OT1/lmr/m/n/10 (+20) 2[]\OML/lmm/m/it/10 enomi
-c:gbff:gz  \OMS/lmsy/m/n/10 ^^@
- []
+! LaTeX Error: Environment subfigure undefined.
 
-! You can't use `macro parameter character #' in vertical mode.
-l.443 #
-        the other three genomes are available through the following paths:
-? 
-! You can't use `macro parameter character #' in horizontal mode.
-l.444 #
-       
-? 
-! You can't use `macro parameter character #' in horizontal mode.
-l.445 #
-         Bsub GCF/000/009/045/GCF_000009045.1_ASM904v1/GCF_000009045.1_ASM90...
-
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.445 #  Bsub GCF/000/009/045/GCF_
-                                  000009045.1_ASM904v1/GCF_000009045.1_ASM90...
-
-? 
-! You can't use `macro parameter character #' in math mode.
-l.446 #
-         Mgen GCF/000/027/325/GCF_000027325.1_ASM2732v1/GCF_000027325.1_ASM2...
-
-? 
-! You can't use `macro parameter character #' in math mode.
-l.447 #
-         Mpne GCF/000/027/345/GCF_000027345.1_ASM2734v1/GCF_000027345.1_ASM2...
-
-? 
-! You can't use `macro parameter character #' in math mode.
-l.448 #
-       
-? 
-! You can't use `macro parameter character #' in math mode.
-l.449 #
-        save them as Bsub_referencegenome.gb.gz, Mgen_referencegenome.gb.gz,
-? 
-! You can't use `macro parameter character #' in math mode.
-l.450 #
-        and Mpne_referencegenome.gb.gz respectively.
-? 
-! You can't use `macro parameter character #' in math mode.
-l.451 #
-        For such a task, you can use a shell loop for instance:
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.452 
-      
-? 
-
-Overfull \hbox (1834.67944pt too wide) in paragraph at lines 443--452
-[]\T1/lmr/m/n/10 (-20) the other three genomes are avail-able through the fol-l
-ow-ing paths:   Bsub GCF/000/009/045/GCF$[]\OT1/lmr/m/n/10 (-20) 00009045\OML/l
-mm/m/it/10 :\OT1/lmr/m/n/10 (-20) 1[]\OML/lmm/m/it/10 SM\OT1/lmr/m/n/10 (-20) 9
-04\OML/lmm/m/it/10 v\OT1/lmr/m/n/10 (-20) 1\OML/lmm/m/it/10 =GCF[]\OT1/lmr/m/n/
-10 (-20) 00009045\OML/lmm/m/it/10 :\OT1/lmr/m/n/10 (-20) 1[]\OML/lmm/m/it/10 SM
-\OT1/lmr/m/n/10 (-20) 904\OML/lmm/m/it/10 v\OT1/lmr/m/n/10 (-20) 1[]\OML/lmm/m/
-it/10 enomic:gbff:gzMgenGCF=\OT1/lmr/m/n/10 (-20) 000\OML/lmm/m/it/10 =\OT1/lmr
-/m/n/10 (-20) 027\OML/lmm/m/it/10 =\OT1/lmr/m/n/10 (-20) 325\OML/lmm/m/it/10 =G
-CF[]\OT1/lmr/m/n/10 (-20) 00027325\OML/lmm/m/it/10 :\OT1/lmr/m/n/10 (-20) 1[]\O
-ML/lmm/m/it/10 SM\OT1/lmr/m/n/10 (-20) 2732\OML/lmm/m/it/10 v\OT1/lmr/m/n/10 (-
-20) 1\OML/lmm/m/it/10 =GCF[]\OT1/lmr/m/n/10 (-20) 00027325\OML/lmm/m/it/10 :\OT
-1/lmr/m/n/10 (-20) 1[]\OML/lmm/m/it/10 SM\OT1/lmr/m/n/10 (-20) 2732\OML/lmm/m/i
-t/10 v\OT1/lmr/m/n/10 (-20) 1[]\OML/lmm/m/it/10 enomic:gbff:gzMpneGCF=\OT1/lmr/
-m/n/10 (-20) 000\OML/lmm/m/it/10 =\OT1/lmr/m/n/10 (-20) 027\OML/lmm/m/it/10 =\O
-T1/lmr/m/n/10 (-20) 345\OML/lmm/m/it/10 =GCF[]\OT1/lmr/m/n/10 (-20) 00027345\OM
-L/lmm/m/it/10 :\OT1/lmr/m/n/10 (-20) 1[]\OML/lmm/m/it/10 SM\OT1/lmr/m/n/10 (-20
-) 2734\OML/lmm/m/it/10 v\OT1/lmr/m/n/10 (-20) 1\OML/lmm/m/it/10 =GCF[]\OT1/lmr/
-m/n/10 (-20) 00027345\OML/lmm/m/it/10 :\OT1/lmr/m/n/10 (-20) 1[]\OML/lmm/m/it/1
-0 SM\OT1/lmr/m/n/10 (-20) 2734\OML/lmm/m/it/10 v\OT1/lmr/m/n/10 (-20) 1[]\OML/l
-mm/m/it/10 enomic:gbff:gzsavethemasBsub[]eferencegenome:gb:gz; Mgen[]eferencege
-nome:gb:gz; andMpne[]eferencegenome:gb:gzrespectively:Forsuchatask; youcanuseas
-hellloopforinstance \OT1/lmr/m/n/10 (-20) :$ 
- []
-
-! You can't use `macro parameter character #' in horizontal mode.
-l.455     echo "#
-                  Downloading genome sequence for $Ospc" 1>&2;
-? 
-! Misplaced alignment tab character &.
-l.455 ...ownloading genome sequence for $Ospc" 1>&
-                                                  2;
-? 
-! Extra }, or forgotten $.
-l.458   }
-         ; done <<'EOF'
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.463 
-      
-? 
-
-Overfull \hbox (845.52211pt too wide) in paragraph at lines 453--463
-\OML/lmm/m/it/10 O$\T1/lmr/m/n/10 (-20) DT/$[][]\OML/lmm/m/it/10 eferencegenome
-:gb:gz\OT1/lmr/m/n/10 (-20) ; \OML/lmm/m/it/10 done <<[] EOF[]BsubGCF=\OT1/lmr/
-m/n/10 (-20) 000\OML/lmm/m/it/10 =\OT1/lmr/m/n/10 (-20) 009\OML/lmm/m/it/10 =\O
-T1/lmr/m/n/10 (-20) 045\OML/lmm/m/it/10 =GCF[]\OT1/lmr/m/n/10 (-20) 00009045\OM
-L/lmm/m/it/10 :\OT1/lmr/m/n/10 (-20) 1[]\OML/lmm/m/it/10 SM\OT1/lmr/m/n/10 (-20
-) 904\OML/lmm/m/it/10 v\OT1/lmr/m/n/10 (-20) 1\OML/lmm/m/it/10 =GCF[]\OT1/lmr/m
-/n/10 (-20) 00009045\OML/lmm/m/it/10 :\OT1/lmr/m/n/10 (-20) 1[]\OML/lmm/m/it/10
- SM\OT1/lmr/m/n/10 (-20) 904\OML/lmm/m/it/10 v\OT1/lmr/m/n/10 (-20) 1\OML/lmm/m
-/it/10 MgenGCF=\OT1/lmr/m/n/10 (-20) 000\OML/lmm/m/it/10 =\OT1/lmr/m/n/10 (-20)
- 027\OML/lmm/m/it/10 =\OT1/lmr/m/n/10 (-20) 325\OML/lmm/m/it/10 =GCF[]\OT1/lmr/
-m/n/10 (-20) 00027325\OML/lmm/m/it/10 :\OT1/lmr/m/n/10 (-20) 1[]\OML/lmm/m/it/1
-0 SM\OT1/lmr/m/n/10 (-20) 2732\OML/lmm/m/it/10 v\OT1/lmr/m/n/10 (-20) 1\OML/lmm
-/m/it/10 =GCF[]\OT1/lmr/m/n/10 (-20) 00027325\OML/lmm/m/it/10 :\OT1/lmr/m/n/10 
-(-20) 1[]\OML/lmm/m/it/10 SM\OT1/lmr/m/n/10 (-20) 2732\OML/lmm/m/it/10 v\OT1/lm
-r/m/n/10 (-20) 1\OML/lmm/m/it/10 MpneGCF=\OT1/lmr/m/n/10 (-20) 000\OML/lmm/m/it
-/10 =\OT1/lmr/m/n/10 (-20) 027\OML/lmm/m/it/10 =\OT1/lmr/m/n/10 (-20) 345\OML/l
-mm/m/it/10 =GCF[]\OT1/lmr/m/n/10 (-20) 00027345\OML/lmm/m/it/10 :\OT1/lmr/m/n/1
-0 (-20) 1[]\OML/lmm/m/it/10 SM\OT1/lmr/m/n/10 (-20) 2734\OML/lmm/m/it/10 v\OT1/
-lmr/m/n/10 (-20) 1\OML/lmm/m/it/10 =GCF[]\OT1/lmr/m/n/10 (-20) 00027345\OML/lmm
-/m/it/10 :\OT1/lmr/m/n/10 (-20) 1[]\OML/lmm/m/it/10 SM\OT1/lmr/m/n/10 (-20) 273
-4\OML/lmm/m/it/10 v\OT1/lmr/m/n/10 (-20) 1\OML/lmm/m/it/10 EOF$ 
- []
-
-! You can't use `macro parameter character #' in vertical mode.
-l.464 #
-       ## IMPORTANT NOTE ###
-? 
-! You can't use `macro parameter character #' in vertical mode.
-l.464 ##
-        # IMPORTANT NOTE ###
-? 
-! You can't use `macro parameter character #' in vertical mode.
-l.464 ###
-          IMPORTANT NOTE ###
-? 
-! You can't use `macro parameter character #' in horizontal mode.
-l.464 ### IMPORTANT NOTE #
-                          ##
-? 
-! You can't use `macro parameter character #' in horizontal mode.
-l.464 ### IMPORTANT NOTE ##
-                           #
-? 
-! You can't use `macro parameter character #' in horizontal mode.
-l.464 ### IMPORTANT NOTE ###
-                            
-? 
-! You can't use `macro parameter character #' in horizontal mode.
-l.465 #
-       
-? 
-! You can't use `macro parameter character #' in horizontal mode.
-l.466 #
-        If the firewall does not allow you to connect to the original NCBI f...
-
-? 
-! You can't use `macro parameter character #' in horizontal mode.
-l.467 #
-        then you can run the following commands to download files from
-? 
-! You can't use `macro parameter character #' in horizontal mode.
-l.468 #
-        the https alternate repository at compgen.bio.ub.edu server.
-? 
-! You can't use `macro parameter character #' in horizontal mode.
-l.469 #
-        Just remind to replace the user and password strings with those
-? 
-! You can't use `macro parameter character #' in horizontal mode.
-l.470 #
-        from the slides for the introduction to the practicals.
-? 
-! You can't use `macro parameter character #' in horizontal mode.
-l.471 #
-       
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.472 ...b.edu/~jabril/teaching/BScBI-CG2021/repo_
-                                                  ex2
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.473 
-      
-? 
-! You can't use `macro parameter character #' in horizontal mode.
-l.476     echo "#
-                  Downloading genome sequence for $Ospc" 1>&2;
-? 
-! Misplaced alignment tab character &.
-l.476 ...ownloading genome sequence for $Ospc" 1>&
-                                                  2;
-? 
-! Extra }, or forgotten $.
-l.481   }
-         ; done <<'EOF'
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.488 
-      
-? 
-
-Overfull \hbox (7.05061pt too wide) in paragraph at lines 474--488
-[]\T1/lmr/m/n/10 (-20) while read Ospc Gftp; do  echo " Down-load-ing genome se
--quence for $\OML/lmm/m/it/10 Ospc\OT1/lmr/m/n/10 (-20) "1 \OML/lmm/m/it/10 > \
-OT1/lmr/m/n/10 (-20) 2; \OML/lmm/m/it/10 wget \OMS/lmsy/m/n/10 ^^@ ^^@\OML/lmm/
-m/it/10 user \OT1/lmr/m/n/10 (-20) = "\OML/lmm/m/it/10 UUUUUUUUUUUU\OT1/lmr/m/n
-/10 (-20) "  \OMS/lmsy/m/n/10 ^^@
- []
-
-
-Overfull \hbox (8.80396pt too wide) in paragraph at lines 474--488
-\OMS/lmsy/m/n/10 ^^@\OML/lmm/m/it/10 password \OT1/lmr/m/n/10 (-20) = "\OML/lmm
-/m/it/10 XXXXXXXX\OT1/lmr/m/n/10 (-20) " $\T1/lmr/m/n/10 (-20) GBFTP/$[][]\OML/
-lmm/m/it/10 eferencegenome:gb:gz  \OMS/lmsy/m/n/10 ^^@ \OML/lmm/m/it/10 O$\T1/l
-mr/m/n/10 (-20) DT/$[][]\OML/lmm/m/it/10 eferencegenome:gb:gz\OT1/lmr/m/n/10 (-
-20) ; \OML/lmm/m/it/10 done <<[]
- []
-
-
-Overfull \hbox (139.30687pt too wide) in paragraph at lines 474--488
-\OML/lmm/m/it/10 EOF[]EcolGCF[]\OT1/lmr/m/n/10 (-20) 00005845\OML/lmm/m/it/10 :
-\OT1/lmr/m/n/10 (-20) 2[]\OML/lmm/m/it/10 SM\OT1/lmr/m/n/10 (-20) 584\OML/lmm/m
-/it/10 v\OT1/lmr/m/n/10 (-20) 2\OML/lmm/m/it/10 BsubGCF[]\OT1/lmr/m/n/10 (-20) 
-00009045\OML/lmm/m/it/10 :\OT1/lmr/m/n/10 (-20) 1[]\OML/lmm/m/it/10 SM\OT1/lmr/
-m/n/10 (-20) 904\OML/lmm/m/it/10 v\OT1/lmr/m/n/10 (-20) 1\OML/lmm/m/it/10 MgenG
-CF[]\OT1/lmr/m/n/10 (-20) 00027325\OML/lmm/m/it/10 :\OT1/lmr/m/n/10 (-20) 1[]\O
-ML/lmm/m/it/10 SM\OT1/lmr/m/n/10 (-20) 2732\OML/lmm/m/it/10 v\OT1/lmr/m/n/10 (-
-20) 1\OML/lmm/m/it/10 MpneGCF[]\OT1/lmr/m/n/10 (-20) 00027345\OML/lmm/m/it/10 :
-\OT1/lmr/m/n/10 (-20) 1[]\OML/lmm/m/it/10 SM\OT1/lmr/m/n/10 (-20) 2734\OML/lmm/
-m/it/10 v\OT1/lmr/m/n/10 (-20) 1\OML/lmm/m/it/10 EOF\OT1/lmr/m/n/10 (-20) \`$ 
- []
-
-! You can't use `macro parameter character #' in vertical mode.
-l.490 #
-       # Retrieving the sequences
-? 
-! You can't use `macro parameter character #' in vertical mode.
-l.490 ##
-         Retrieving the sequences
-? 
-! You can't use `macro parameter character #' in horizontal mode.
-l.496 #
-        for manual pages on this emboss tool run:  tfm seqret
-? 
-! You can't use `macro parameter character #' in horizontal mode.
-l.497 #
-       
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.500 zcat $DT/${SPC}_
-                      referencegenome.gb.gz | \
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.503 
-      
-? 
-
-Underfull \hbox (badness 1342) in paragraph at lines 500--503
-[]\T1/lmr/m/n/10 (+20) zcat $\OML/lmm/m/it/10 DT=$\T1/lmr/m/n/10 (+20) SPC$[]\O
-ML/lmm/m/it/10 eferencegenome:gb:gz\OMS/lmsy/m/n/10 j \OML/lmm/m/it/10 seqret \
-OMS/lmsy/m/n/10 ^^@ \OML/lmm/m/it/10 sequencegenbank \OT1/lmr/m/n/10 (+20) :: \
-OML/lmm/m/it/10 stdin \OMS/lmsy/m/n/10 ^^@ \OML/lmm/m/it/10 outseqfasta \OT1/lm
-r/m/n/10 (+20) :: \OML/lmm/m/it/10 stdout\OMS/lmsy/m/n/10 j \OML/lmm/m/it/10 gz
-ip \OMS/lmsy/m/n/10 ^^@
- []
-
-! You can't use `macro parameter character #' in vertical mode.
-l.504 #
-        let's verify if fasta sequence has same length as reported in the Ge...
-
-? 
-File: docs/ESCI_logo.png Graphic file (type png)
-<use docs/ESCI_logo.png>
-Package pdftex.def Info: docs/ESCI_logo.png  used on input line 506.
-(pdftex.def)             Requested size: 18.48944pt x 18.4931pt.
-[3]
-! Missing $ inserted.
-<inserted text> 
-                $
-l.506 zegrep '^
-               LOCUS'  $DT/${SPC}_referencegenome.gb.gz
-? 
-! You can't use `macro parameter character #' in math mode.
-l.507 #
-       > LOCUS       NC_000913            4641652 bp    DNA     circular CON...
-
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.508 
-      
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.509 zcat $DT/${SPC}_
-                      referencegenome.fa.gz | \
-? 
-! You can't use `macro parameter character #' in math mode.
-l.512 #
-       > Display basic information about sequences
-? 
-! You can't use `macro parameter character #' in math mode.
-l.513 #
-       > NC_000913      4641652 50.79
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.514 
-      
-? 
-! You can't use `macro parameter character #' in vertical mode.
-l.515 #
-       ## repeat the commands for the other three genomes ###
-? 
-! You can't use `macro parameter character #' in vertical mode.
-l.515 ##
-        # repeat the commands for the other three genomes ###
-? 
-! You can't use `macro parameter character #' in vertical mode.
-l.515 ###
-          repeat the commands for the other three genomes ###
-? 
-! You can't use `macro parameter character #' in horizontal mode.
-l.515 ...he commands for the other three genomes #
-                                                  ##
-? 
-! You can't use `macro parameter character #' in horizontal mode.
-l.515 ...e commands for the other three genomes ##
-                                                  #
-? 
-! You can't use `macro parameter character #' in horizontal mode.
-l.515 ... commands for the other three genomes ###
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
                                                   
+l.11   \begin{subfigure}
+                        [B]{\textwidth}
 ? 
-! You can't use `macro parameter character #' in vertical mode.
-l.521 #
-       # Summary of sequence content
+! Missing number, treated as zero.
+<to be read again> 
+                   }
+l.11   \begin{subfigure}[B]{\textwidth}
+                                       
 ? 
-! You can't use `macro parameter character #' in vertical mode.
-l.521 ##
-         Summary of sequence content
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   }
+l.11   \begin{subfigure}[B]{\textwidth}
+                                       
 ? 
-! You can't use `macro parameter character #' in vertical mode.
-l.523 #
-       ## Chaos-plot
-? 
-! You can't use `macro parameter character #' in vertical mode.
-l.523 ##
-        # Chaos-plot
-? 
-! You can't use `macro parameter character #' in vertical mode.
-l.523 ###
-          Chaos-plot
-? 
+<images/Bsub_chaosplot.1.png, id=194, 602.25pt x 451.6875pt>
+File: images/Bsub_chaosplot.1.png Graphic file (type png)
+<use images/Bsub_chaosplot.1.png>
+Package pdftex.def Info: images/Bsub_chaosplot.1.png  used on input line 13.
+(pdftex.def)             Requested size: 204.85672pt x 153.64063pt.
 
-Overfull \hbox (4.15532pt too wide) in paragraph at lines 525--526
-[]\T1/lmtt/m/n/10 EMBOSS \T1/lmr/m/n/10 (-20) suite has a com-mand to cal-cu-la
-te [chaos plots](http://emboss.sourceforge.net/apps/cvs/emboss/apps/chaos.html)
-,
- []
+! LaTeX Error: \begin{figure} on input line 4 ended by \end{subfigure}.
 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.528 zcat $DT/${SPC}_
-                      referencegenome.fa.gz | \
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.531         -goutfile $WDR/images/${SPC}_
-                                           chaosplot
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.532 
-      
-? 
-! You can't use `macro parameter character #' in vertical mode.
-l.533 #
-       ## repeat the commands for the other three genomes ###
-? 
-! You can't use `macro parameter character #' in vertical mode.
-l.533 ##
-        # repeat the commands for the other three genomes ###
-? 
-! You can't use `macro parameter character #' in vertical mode.
-l.533 ###
-          repeat the commands for the other three genomes ###
-? 
-! You can't use `macro parameter character #' in horizontal mode.
-l.533 ...he commands for the other three genomes #
-                                                  ##
-? 
-! You can't use `macro parameter character #' in horizontal mode.
-l.533 ...e commands for the other three genomes ##
-                                                  #
-? 
-! You can't use `macro parameter character #' in horizontal mode.
-l.533 ... commands for the other three genomes ###
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
                                                   
+l.14   \end{subfigure}
+                      
 ? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.536 You _
-           _must__ include here a \LaTeX\ figure, defined as a table of two ...
 
+! LaTeX Error: Environment subfigure undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.16   \begin{subfigure}
+                        [C]{\textwidth}
 ? 
-! Missing { inserted.
+! Missing number, treated as zero.
 <to be read again> 
-                   _
-l.536 You __
-            must__ include here a \LaTeX\ figure, defined as a table of two ...
-
+                   }
+l.16   \begin{subfigure}[C]{\textwidth}
+                                       
 ? 
-! Missing { inserted.
+! Illegal unit of measure (pt inserted).
 <to be read again> 
-                   _
-l.536 You __must__
-                   include here a \LaTeX\ figure, defined as a table of two ...
+                   }
+l.16   \begin{subfigure}[C]{\textwidth}
+                                       
+? 
+<images/Mgen_chaosplot.1.png, id=195, 602.25pt x 451.6875pt>
+File: images/Mgen_chaosplot.1.png Graphic file (type png)
+<use images/Mgen_chaosplot.1.png>
+Package pdftex.def Info: images/Mgen_chaosplot.1.png  used on input line 18.
+(pdftex.def)             Requested size: 204.85672pt x 153.64063pt.
 
-? 
-! You can't use `\spacefactor' in math mode.
-\@->\spacefactor 
-                 \@m {}
-l.536 You __must__ include here a \LaTeX
-                                        \ figure, defined as a table of two ...
+! LaTeX Error: \begin{figure} on input line 4 ended by \end{subfigure}.
 
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.19   \end{subfigure}
+                      
 ? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.537 
-      
-? 
-! Missing } inserted.
-<inserted text> 
-                }
-l.537 
-      
-? 
-! Missing } inserted.
-<inserted text> 
-                }
-l.537 
-      
-? 
-Missing character: There is no è in font lmex10!
 
-Overfull \hbox (390.95229pt too wide) in paragraph at lines 536--537
-[]\T1/lmr/m/n/10 (-20) You $[]$ 
- []
+! LaTeX Error: Environment subfigure undefined.
 
-! You can't use `macro parameter character #' in vertical mode.
-l.539 #
-       ## Computing GC content variation across the genome
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.21   \begin{subfigure}
+                        [D]{\textwidth}
 ? 
-! You can't use `macro parameter character #' in vertical mode.
-l.539 ##
-        # Computing GC content variation across the genome
-? 
-! You can't use `macro parameter character #' in vertical mode.
-l.539 ###
-          Computing GC content variation across the genome
-? 
-! You can't use `macro parameter character #' in horizontal mode.
-l.544 #
-       !/usr/bin/perl
-? 
-! You can't use `macro parameter character #' in horizontal mode.
-l.545 #
-       
-? 
-! You can't use `macro parameter character #' in horizontal mode.
-l.546 #
-        you can save this script as "bin/genomicgcwindows.pl"
-? 
-! You can't use `macro parameter character #' in horizontal mode.
-l.547 #
-       
-? 
-! You can't use `macro parameter character #' in vertical mode.
-l.551 #
-        variables initialization
-? 
-! Misplaced alignment tab character &.
-l.553 $window < 10 &
-                    & die("# ERROR: window length must be a positive integer...
-
-? 
-! Misplaced alignment tab character &.
-l.553 $window < 10 &&
-                      die("# ERROR: window length must be a positive integer...
-
-? 
-! You can't use `macro parameter character #' in horizontal mode.
-l.553 $window < 10 && die("#
-                             ERROR: window length must be a positive integer...
-
-? 
-! Undefined control sequence.
-l.553 ...sitive integer equal or greater than 10\n
-                                                  ");
-? 
-! You can't use `macro parameter character #' in horizontal mode.
-l.554 my $step = int($window / 2); #
-                                     we have chosen to fix this parameter
-? 
-! You can't use `macro parameter character #' in vertical mode.
-l.557 #
-        read sequences
-? 
-! Undefined control sequence.
-l.560     next if /^\s
-                      *$/o;
-? 
-! Missing } inserted.
-<inserted text> 
-                }
-l.560     next if /^\s*$
-                        /o;
-? 
-! Misplaced alignment tab character &.
-l.562     $_ =~ /^>/ &
-                      & do {  # finding the sequence header with its name
-? 
-! Misplaced alignment tab character &.
-l.562     $_ =~ /^>/ &&
-                        do {  # finding the sequence header with its name
-? 
-! You can't use `macro parameter character #' in math mode.
-l.562     $_ =~ /^>/ && do {  #
-                                finding the sequence header with its name
-? 
-! Missing } inserted.
-<inserted text> 
-                }
-l.563         ($
-                sid, undef) = split /\s+/, $_;
-? 
-! Undefined control sequence.
-l.563         ($sid, undef) = split /\s
-                                       +/, $_;
-? 
-! Extra }, or forgotten $.
-l.564         exists($SEQS{$sid}
-                                ) || ($SEQS{$sid} = '');
-? 
-! Extra }, or forgotten $.
-l.564         exists($SEQS{$sid}) || ($SEQS{$sid}
-                                                  = '');
-? 
-! Extra }, or forgotten $.
-l.566     }
-           ;
-? 
-! Undefined control sequence.
-l.568     $_ =~ s/\s
-                    +//og; # just in case there are white spaces on the sequ...
-
-? 
-! You can't use `macro parameter character #' in math mode.
-l.568     $_ =~ s/\s+//og; #
-                             just in case there are white spaces on the sequ...
-
-? 
-! Extra }, or forgotten $.
-l.569     $SEQS{$sid}
-                      .= uc($_);
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.569     $SEQS{$sid} .= uc($_
-                              );
-? 
-! Extra }, or forgotten $.
-l.570 }
-       ; # while $_
-? 
-! You can't use `macro parameter character #' in math mode.
-l.570 }; #
-           while $_
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.570 }; # while $_
-                   
-? 
-! Missing { inserted.
+! Missing number, treated as zero.
 <to be read again> 
-                   \par 
-l.571 
-      
+                   }
+l.21   \begin{subfigure}[D]{\textwidth}
+                                       
 ? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.571 
-      
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   }
+l.21   \begin{subfigure}[D]{\textwidth}
+                                       
 ? 
-! Missing } inserted.
-<inserted text> 
-                }
-l.571 
-      
-? 
+<images/Mpne_chaosplot.1.png, id=196, 602.25pt x 451.6875pt>
+File: images/Mpne_chaosplot.1.png Graphic file (type png)
+<use images/Mpne_chaosplot.1.png>
+Package pdftex.def Info: images/Mpne_chaosplot.1.png  used on input line 23.
+(pdftex.def)             Requested size: 204.85672pt x 153.64063pt.
 
-Overfull \hbox (141.46304pt too wide) in paragraph at lines 557--571
-\T1/lmr/m/n/10 (-20) un-def) = split /+/, $[]\OML/lmm/m/it/10 exists\OT1/lmr/m/
-n/10 (-20) ($\T1/lmr/m/n/10 (-20) SEQS$\OML/lmm/m/it/10 sid\OT1/lmr/m/n/10 (-20
-) )\OMS/lmsy/m/n/10 jj\OT1/lmr/m/n/10 (-20) ($\T1/lmr/m/n/10 (-20) SEQS$\OML/lm
-m/m/it/10 sid \OT1/lmr/m/n/10 (-20) =[]); \OML/lmm/m/it/10 next\OT1/lmr/m/n/10 
-(-20) ; ; \OML/lmm/m/it/10 defined\OT1/lmr/m/n/10 (-20) ($\T1/lmr/m/n/10 (-20) 
-sid) || next; $[] []\OML/lmm/m/it/10 s= \OT1/lmr/m/n/10 (-20) + \OML/lmm/m/it/1
-0 ==og\OT1/lmr/m/n/10 (-20) ; \OML/lmm/m/it/10 justincasetherearewhitespacesont
-hesequence$\T1/lmr/m/n/10 (-20) SEQS$\OML/lmm/m/it/10 sid: \OT1/lmr/m/n/10 (-20
-) =
- []
+! LaTeX Error: \begin{figure} on input line 4 ended by \end{subfigure}.
 
-! You can't use `macro parameter character #' in vertical mode.
-l.572 #
-        analyze sequences
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.24   \end{subfigure}
+                      
 ? 
-! Missing } inserted.
-<inserted text> 
-                }
-l.574     my $seq = $SEQS{$
-                           sid};
+! Undefined control sequence.
+<argument> ...pe \endcsname }{\ignorespaces \cele 
+                                                  \ Chaos plot for different...
+l.27 }
+      %
 ? 
-
-Package natbib Warning: Citation `_' on page 4 undefined on input line 586.
-
+! Undefined control sequence.
+<recently read> \cele 
+                      
+l.27 }
+      %
+? 
+)
 File: docs/ESCI_logo.png Graphic file (type png)
 <use docs/ESCI_logo.png>
-Package pdftex.def Info: docs/ESCI_logo.png  used on input line 609.
+Package pdftex.def Info: docs/ESCI_logo.png  used on input line 589.
 (pdftex.def)             Requested size: 18.48944pt x 18.4931pt.
-[4]
+ [5 <./images/Ecol_chaosplot.1.png> <./images/Bsub_chaosplot.1.png> <./images/M
+gen_chaosplot.1.png> <./images/Mpne_chaosplot.1.png>]
+LaTeX Font Info:    Font shape `TS1/lmtt/bx/n' in size <10> not available
+(Font)              Font shape `TS1/lmtt/b/n' tried instead on input line 630.
 File: docs/ESCI_logo.png Graphic file (type png)
 <use docs/ESCI_logo.png>
-Package pdftex.def Info: docs/ESCI_logo.png  used on input line 679.
+Package pdftex.def Info: docs/ESCI_logo.png  used on input line 671.
 (pdftex.def)             Requested size: 18.48944pt x 18.4931pt.
- [5]
-File: docs/ESCI_logo.png Graphic file (type png)
-<use docs/ESCI_logo.png>
-Package pdftex.def Info: docs/ESCI_logo.png  used on input line 760.
-(pdftex.def)             Requested size: 18.48944pt x 18.4931pt.
- [6]
-File: docs/ESCI_logo.png Graphic file (type png)
-<use docs/ESCI_logo.png>
-Package pdftex.def Info: docs/ESCI_logo.png  used on input line 797.
-(pdftex.def)             Requested size: 18.48944pt x 18.4931pt.
- [7]
-File: docs/ESCI_logo.png Graphic file (type png)
-<use docs/ESCI_logo.png>
-Package pdftex.def Info: docs/ESCI_logo.png  used on input line 846.
-(pdftex.def)             Requested size: 18.48944pt x 18.4931pt.
- [8
+ [6
 
 ]
 File: docs/ESCI_logo.png Graphic file (type png)
 <use docs/ESCI_logo.png>
-Package pdftex.def Info: docs/ESCI_logo.png  used on input line 859.
+Package pdftex.def Info: docs/ESCI_logo.png  used on input line 737.
 (pdftex.def)             Requested size: 18.48944pt x 18.4931pt.
- [9]
+ [7]
+(./images/winlength.tex
+<images/Ecol_genomegcanalysis_wlen2000.png, id=218, 711.25725pt x 227.53004pt>
+File: images/Ecol_genomegcanalysis_wlen2000.png Graphic file (type png)
+<use images/Ecol_genomegcanalysis_wlen2000.png>
+Package pdftex.def Info: images/Ecol_genomegcanalysis_wlen2000.png  used on inp
+ut line 6.
+(pdftex.def)             Requested size: 256.07481pt x 81.9177pt.
+<images/Bsub_genomegcanalysis_wlen2000.png, id=219, 711.25725pt x 227.53004pt>
+File: images/Bsub_genomegcanalysis_wlen2000.png Graphic file (type png)
+<use images/Bsub_genomegcanalysis_wlen2000.png>
+Package pdftex.def Info: images/Bsub_genomegcanalysis_wlen2000.png  used on inp
+ut line 7.
+(pdftex.def)             Requested size: 256.07481pt x 81.9177pt.
+<images/Mgen_genomegcanalysis_wlen2000.png, id=220, 711.25725pt x 227.53004pt>
+File: images/Mgen_genomegcanalysis_wlen2000.png Graphic file (type png)
+<use images/Mgen_genomegcanalysis_wlen2000.png>
+Package pdftex.def Info: images/Mgen_genomegcanalysis_wlen2000.png  used on inp
+ut line 8.
+(pdftex.def)             Requested size: 256.07481pt x 81.9177pt.
+<images/Mpne_genomegcanalysis_wlen2000.png, id=221, 711.25725pt x 227.53004pt>
+File: images/Mpne_genomegcanalysis_wlen2000.png Graphic file (type png)
+<use images/Mpne_genomegcanalysis_wlen2000.png>
+Package pdftex.def Info: images/Mpne_genomegcanalysis_wlen2000.png  used on inp
+ut line 9.
+(pdftex.def)             Requested size: 256.07481pt x 81.9177pt.
 
-Package natbib Warning: There were undefined citations.
+! Undefined control sequence.
+<argument> ...pe \endcsname }{\ignorespaces \cele 
+                                                  \ Windows analysis for dif...
+l.14 }
+      %
+? 
+! Undefined control sequence.
+<recently read> \cele 
+                      
+l.14 }
+      %
+? 
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 866.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+)
+File: docs/ESCI_logo.png Graphic file (type png)
+<use docs/ESCI_logo.png>
+Package pdftex.def Info: docs/ESCI_logo.png  used on input line 792.
+(pdftex.def)             Requested size: 18.48944pt x 18.4931pt.
+ [8]
+File: docs/ESCI_logo.png Graphic file (type png)
+<use docs/ESCI_logo.png>
+Package pdftex.def Info: docs/ESCI_logo.png  used on input line 792.
+(pdftex.def)             Requested size: 18.48944pt x 18.4931pt.
+ [9 <./images/Ecol_genomegcanalysis_wlen2000.png (PNG copy)> <./images/Bsub_gen
+omegcanalysis_wlen2000.png (PNG copy)> <./images/Mgen_genomegcanalysis_wlen2000
+.png (PNG copy)> <./images/Mpne_genomegcanalysis_wlen2000.png (PNG copy)>] (./i
+mages/winlength_species.tex
+<images/Mgen_genomegcanalysis_wlen100.png, id=230, 711.25725pt x 227.53004pt>
+File: images/Mgen_genomegcanalysis_wlen100.png Graphic file (type png)
+<use images/Mgen_genomegcanalysis_wlen100.png>
+Package pdftex.def Info: images/Mgen_genomegcanalysis_wlen100.png  used on inpu
+t line 6.
+(pdftex.def)             Requested size: 256.07481pt x 81.9177pt.
+<images/Mgen_genomegcanalysis_wlen200.png, id=231, 711.25725pt x 227.53004pt>
+File: images/Mgen_genomegcanalysis_wlen200.png Graphic file (type png)
+<use images/Mgen_genomegcanalysis_wlen200.png>
+Package pdftex.def Info: images/Mgen_genomegcanalysis_wlen200.png  used on inpu
+t line 7.
+(pdftex.def)             Requested size: 256.07481pt x 81.9177pt.
+<images/Mgen_genomegcanalysis_wlen500.png, id=232, 711.25725pt x 227.53004pt>
+File: images/Mgen_genomegcanalysis_wlen500.png Graphic file (type png)
+<use images/Mgen_genomegcanalysis_wlen500.png>
+Package pdftex.def Info: images/Mgen_genomegcanalysis_wlen500.png  used on inpu
+t line 8.
+(pdftex.def)             Requested size: 256.07481pt x 81.9177pt.
+<images/Mgen_genomegcanalysis_wlen1000.png, id=233, 711.25725pt x 227.53004pt>
+File: images/Mgen_genomegcanalysis_wlen1000.png Graphic file (type png)
+<use images/Mgen_genomegcanalysis_wlen1000.png>
+Package pdftex.def Info: images/Mgen_genomegcanalysis_wlen1000.png  used on inp
+ut line 9.
+(pdftex.def)             Requested size: 256.07481pt x 81.9177pt.
+File: images/Mgen_genomegcanalysis_wlen2000.png Graphic file (type png)
+<use images/Mgen_genomegcanalysis_wlen2000.png>
+Package pdftex.def Info: images/Mgen_genomegcanalysis_wlen2000.png  used on inp
+ut line 10.
+(pdftex.def)             Requested size: 256.07481pt x 81.9177pt.
+<images/Mgen_genomegcanalysis_wlen5000.png, id=234, 711.25725pt x 227.53004pt>
+File: images/Mgen_genomegcanalysis_wlen5000.png Graphic file (type png)
+<use images/Mgen_genomegcanalysis_wlen5000.png>
+Package pdftex.def Info: images/Mgen_genomegcanalysis_wlen5000.png  used on inp
+ut line 11.
+(pdftex.def)             Requested size: 256.07481pt x 81.9177pt.
+<images/Mgen_genomegcanalysis_wlen10000.png, id=235, 711.25725pt x 227.53004pt>
+
+File: images/Mgen_genomegcanalysis_wlen10000.png Graphic file (type png)
+<use images/Mgen_genomegcanalysis_wlen10000.png>
+Package pdftex.def Info: images/Mgen_genomegcanalysis_wlen10000.png  used on in
+put line 12.
+(pdftex.def)             Requested size: 256.07481pt x 81.9177pt.
+
+! Undefined control sequence.
+<argument> ...pe \endcsname }{\ignorespaces \cele 
+                                                  \ Windows analysis of M.ge...
+l.17 }
+      %
+? 
+! Undefined control sequence.
+<recently read> \cele 
+                      
+l.17 }
+      %
+? 
+)
+File: docs/ESCI_logo.png Graphic file (type png)
+<use docs/ESCI_logo.png>
+Package pdftex.def Info: docs/ESCI_logo.png  used on input line 796.
+(pdftex.def)             Requested size: 18.48944pt x 18.4931pt.
+ [10
+
+ <./images/Mgen_genomegcanalysis_wlen100.png (PNG copy)> <./images/Mgen_genomeg
+canalysis_wlen200.png (PNG copy)> <./images/Mgen_genomegcanalysis_wlen500.png (
+PNG copy)> <./images/Mgen_genomegcanalysis_wlen1000.png (PNG copy)> <./images/M
+gen_genomegcanalysis_wlen5000.png (PNG copy)> <./images/Mgen_genomegcanalysis_w
+len10000.png (PNG copy)>]
 File: docs/ESCI_logo.png Graphic file (type png)
 <use docs/ESCI_logo.png>
 Package pdftex.def Info: docs/ESCI_logo.png  used on input line 866.
 (pdftex.def)             Requested size: 18.48944pt x 18.4931pt.
-[10]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 866.
+ [11
+
+]
+File: docs/ESCI_logo.png Graphic file (type png)
+<use docs/ESCI_logo.png>
+Package pdftex.def Info: docs/ESCI_logo.png  used on input line 941.
+(pdftex.def)             Requested size: 18.48944pt x 18.4931pt.
+ [12] (./docs/genbank_summary_genomes.tex
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.6 \newline
+            
+? 
+)
+File: docs/ESCI_logo.png Graphic file (type png)
+<use docs/ESCI_logo.png>
+Package pdftex.def Info: docs/ESCI_logo.png  used on input line 973.
+(pdftex.def)             Requested size: 18.48944pt x 18.4931pt.
+ [13] (./images/rplots.tex
+<images/Rplot_boxplot.png, id=257, 656.4525pt x 422.32782pt>
+File: images/Rplot_boxplot.png Graphic file (type png)
+<use images/Rplot_boxplot.png>
+Package pdftex.def Info: images/Rplot_boxplot.png  used on input line 6.
+(pdftex.def)             Requested size: 256.07481pt x 164.74585pt.
+<images/Rplot_count.png, id=258, 711.4078pt x 469.755pt>
+File: images/Rplot_count.png Graphic file (type png)
+<use images/Rplot_count.png>
+Package pdftex.def Info: images/Rplot_count.png  used on input line 7.
+(pdftex.def)             Requested size: 256.07481pt x 169.09734pt.
+
+! Undefined control sequence.
+<argument> ...pe \endcsname }{\ignorespaces \cele 
+                                                  \ Total from Jellyfish by ...
+l.12 }
+      %
+? 
+! Undefined control sequence.
+<recently read> \cele 
+                      
+l.12 }
+      %
+? 
+! Undefined control sequence.
+<recently read> \cele 
+                      
+l.12 }
+      %
+? 
+)
+File: docs/ESCI_logo.png Graphic file (type png)
+<use docs/ESCI_logo.png>
+Package pdftex.def Info: docs/ESCI_logo.png  used on input line 1010.
+(pdftex.def)             Requested size: 18.48944pt x 18.4931pt.
+ [14
+
+ <./images/Rplot_boxplot.png (PNG copy)> <./images/Rplot_count.png (PNG copy)>]
+File: docs/ESCI_logo.png Graphic file (type png)
+<use docs/ESCI_logo.png>
+Package pdftex.def Info: docs/ESCI_logo.png  used on input line 1071.
+(pdftex.def)             Requested size: 18.48944pt x 18.4931pt.
+ [15
+
+]pdfTeX warning (ext4): destination with the same identifier (name{supl}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1111 ...n{Project specific scripts}\label{supl}}
+                                                  
+File: docs/ESCI_logo.png Graphic file (type png)
+<use docs/ESCI_logo.png>
+Package pdftex.def Info: docs/ESCI_logo.png  used on input line 1113.
+(pdftex.def)             Requested size: 18.48944pt x 18.4931pt.
+ [16
+
+]
+File: docs/ESCI_logo.png Graphic file (type png)
+<use docs/ESCI_logo.png>
+Package pdftex.def Info: docs/ESCI_logo.png  used on input line 1114.
+(pdftex.def)             Requested size: 18.48944pt x 18.4931pt.
+ [17]
+File: docs/ESCI_logo.png Graphic file (type png)
+<use docs/ESCI_logo.png>
+Package pdftex.def Info: docs/ESCI_logo.png  used on input line 1117.
+(pdftex.def)             Requested size: 18.48944pt x 18.4931pt.
+ [18]
+File: docs/ESCI_logo.png Graphic file (type png)
+<use docs/ESCI_logo.png>
+Package pdftex.def Info: docs/ESCI_logo.png  used on input line 1118.
+(pdftex.def)             Requested size: 18.48944pt x 18.4931pt.
+ [19]
+File: docs/ESCI_logo.png Graphic file (type png)
+<use docs/ESCI_logo.png>
+Package pdftex.def Info: docs/ESCI_logo.png  used on input line 1124.
+(pdftex.def)             Requested size: 18.48944pt x 18.4931pt.
+ [20]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1144.
+File: docs/ESCI_logo.png Graphic file (type png)
+<use docs/ESCI_logo.png>
+Package pdftex.def Info: docs/ESCI_logo.png  used on input line 1144.
+(pdftex.def)             Requested size: 18.48944pt x 18.4931pt.
+
+[21]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1144.
  (./README_BScBICG2021_exercise02_CABELLO_ADRIA.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 866.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 866.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1144.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1144.
+
 Package rerunfilecheck Info: File `README_BScBICG2021_exercise02_CABELLO_ADRIA.
 out' has not changed.
-(rerunfilecheck)             Checksum: C684E8121D6FBF3E5BF054A991DA6BF8;2604.
+(rerunfilecheck)             Checksum: 3EB51C765AB422D6E035F455DDBC5950;3292.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 866.
- )
-(\end occurred inside a group at level 3)
 
-### simple group (level 3) entered at line 564 ({)
-### simple group (level 2) entered at line 475 ({)
-### simple group (level 1) entered at line 454 ({)
-### bottom level 
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1144.
+ ) 
 Here is how much of TeX's memory you used:
- 13946 strings out of 492982
- 199565 string characters out of 6134896
- 312195 words of memory out of 5000000
- 17132 multiletter control sequences out of 15000+600000
- 89530 words of font info for 117 fonts, out of 8000000 for 9000
+ 14094 strings out of 492982
+ 203601 string characters out of 6134896
+ 311061 words of memory out of 5000000
+ 17215 multiletter control sequences out of 15000+600000
+ 89882 words of font info for 118 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,16n,43p,819b,669s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/share/tex
-mf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/
-dvips/lm/lm-mathsy.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr
-/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/pub
-lic/lm/lmbx9.pfb></usr/share/texmf/fonts/type1/public/lm/lmbxi10.pfb></usr/shar
-e/texmf/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf/fonts/type1/public/
-lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi5.pfb></usr/share/tex
-mf/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr1
-0.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts
-/type1/public/lm/lmr5.pfb></usr/share/texmf/fonts/type1/public/lm/lmr6.pfb></us
-r/share/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/publ
-ic/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb></usr/share/tex
-mf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr
-i8.pfb></usr/share/texmf/fonts/type1/public/lm/lmro9.pfb></usr/share/texmf/font
-s/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy7.pfb>
-</usr/share/texmf/fonts/type1/public/lm/lmtk10.pfb></usr/share/texmf/fonts/type
-1/public/lm/lmtt10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt9.pfb></usr/
-share/texmf/fonts/type1/public/lm/lmtti10.pfb>
-Output written on README_BScBICG2021_exercise02_CABELLO_ADRIA.pdf (12 pages, 57
-0730 bytes).
+ 38i,15n,46p,423b,603s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/share/texmf/fonts/enc/d
+vips/lm/lm-ec.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/shar
+e/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/l
+m/lmbx9.pfb></usr/share/texmf/fonts/type1/public/lm/lmbxi10.pfb></usr/share/tex
+mf/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf/fonts/type1/public/lm/lm
+r10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fon
+ts/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/type1/public/lm/lmr7.pfb></
+usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/pu
+blic/lm/lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share
+/texmf/fonts/type1/public/lm/lmri8.pfb></usr/share/texmf/fonts/type1/public/lm/
+lmro9.pfb></usr/share/texmf/fonts/type1/public/lm/lmtk10.pfb></usr/share/texmf/
+fonts/type1/public/lm/lmtt10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt9.
+pfb></usr/share/texmf/fonts/type1/public/lm/lmtti10.pfb>
+Output written on README_BScBICG2021_exercise02_CABELLO_ADRIA.pdf (23 pages, 52
+45171 bytes).
 PDF statistics:
- 313 PDF objects out of 1000 (max. 8388607)
- 270 compressed objects within 3 object streams
- 51 named destinations out of 1000 (max. 500000)
- 20614 words of extra memory for PDF output out of 20736 (max. 10000000)
+ 402 PDF objects out of 1000 (max. 8388607)
+ 332 compressed objects within 4 object streams
+ 78 named destinations out of 1000 (max. 500000)
+ 20718 words of extra memory for PDF output out of 20736 (max. 10000000)
 

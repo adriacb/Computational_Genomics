@@ -1,0 +1,71 @@
+# Ecol - 10
+Unique:    40625
+Distinct:  490389
+Total:     4641643
+Max_count: 284
+
+# Ecol - 15
+Unique:    4357730
+Distinct:  4462229
+Total:     4641638
+Max_count: 137
+
+# Ecol - 20
+Unique:    4507760
+Distinct:  4542190
+Total:     4641633
+Max_count: 82
+
+# Bsub - 10
+Unique:    47840
+Distinct:  494580
+Total:     4215597
+Max_count: 333
+
+# Bsub - 15
+Unique:    4015017
+Distinct:  4092956
+Total:     4215592
+Max_count: 20
+
+# Bsub - 20
+Unique:    4143882
+Distinct:  4159409
+Total:     4215587
+Max_count: 10
+
+# Mgen - 10
+Unique:    87099
+Distinct:  192529
+Total:     580067
+Max_count: 122
+
+# Mgen - 15
+Unique:    550161
+Distinct:  562149
+Total:     580062
+Max_count: 39
+
+# Mgen - 20
+Unique:    564076
+Distinct:  569990
+Total:     580057
+Max_count: 31
+
+# Mpne - 10
+Unique:    123499
+Distinct:  292158
+Total:     816385
+Max_count: 58
+
+# Mpne - 15
+Unique:    740058
+Distinct:  766612
+Total:     816380
+Max_count: 36
+
+# Mpne - 20
+Unique:    757793
+Distinct:  778224
+Total:     816375
+Max_count: 15

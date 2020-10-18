@@ -473,6 +473,7 @@ ggsave("images/Ecol_genomegcanalysis_wlen100.png",
 
 Include here a figure combining the plots for the set of window lengths (100, 200, 500, 1000, 2000, 5000, and 10000). Then choose one of those windows lengths and provide the commands to analyze the other three genomic sequences. After that, you can include another figure stacking the results for that window length on all the genomes.
 
+INSERT HERE RSCRIPT
 
 ```{.r}
 ### repeat the commands for the other three genomes ###
@@ -545,8 +546,10 @@ for SPC in Ecol Bsub;
 Try different *k*-mer sizes (i.e. 10, 15, 20, 25, 30, 35, and 40), on the genomic sequences of the four species and summarize them into another \LaTeX\ table to include below. You can take "`docs/tbl_genbank_summary_info_genomes.tex`" as example to create this table.
 
 
-```{.sh}
+\input{docs/genbank_summary_genomes}
+```{.r}
 ### repeat the commands for the other three genomes ###
+
 ```
 
 # Discussion
@@ -596,6 +599,7 @@ R --version
 ### Shell global vars and settings for this project
 
 \loadfile{projectvars.sh}{projectvars.sh}{prg:projectvarsBASH}
+\loadfile{runpipeline.sh}{runpipeline.sh}{prg:unpipelineBASH}
 
 
 ## About this document

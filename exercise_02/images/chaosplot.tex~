@@ -1,0 +1,15 @@
+%\input{images/chaosplot}
+%
+
+\begin{figure}[!h]
+\begin{center}{c}
+ \includegraphics[width=0.5\linewidth]{{images/Ecol_chaosplot.1}.png}\\
+ \includegraphics[width=0.5\linewidth]{{images/Bsub_chaosplot.1}.png}\\
+ \includegraphics[width=0.5\linewidth]{{images/Mgen_chaosplot.1}.png}\\
+ \includegraphics[width=0.5\linewidth]{{images/Mpne_chaosplot.1}.png}\\
+\end{center}
+
+\caption[\cele\ Chaos plot for different genomes species.]{%
+  \label{fig:chaosplot}\textbf{\cele\ Chaos plot.}
+}%
+\end{figure}

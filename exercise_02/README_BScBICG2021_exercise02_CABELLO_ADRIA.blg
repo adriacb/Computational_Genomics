@@ -2,11 +2,11 @@ This is BibTeX, Version 0.99d (TeX Live 2017/Debian)
 Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: README_BScBICG2021_exercise02_CABELLO_ADRIA.aux
 The style file: plainnat.bst
+I found no \citation commands---while reading file README_BScBICG2021_exercise02_CABELLO_ADRIA.aux
 I found no \bibdata command---while reading file README_BScBICG2021_exercise02_CABELLO_ADRIA.aux
-Warning--I didn't find a database entry for "_"
 You've used 0 entries,
             2773 wiz_defined-function locations,
-            592 strings with 4899 characters,
+            591 strings with 4898 characters,
 and the built_in function-call counts, 33 in all, are:
 = -- 0
 > -- 0
@@ -45,4 +45,4 @@ warning$ -- 0
 while$ -- 0
 width$ -- 0
 write$ -- 7
-(There was 1 error message)
+(There were 2 error messages)

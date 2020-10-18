@@ -1,5 +1,9 @@
 #!/bin/bash
+#run:
+#. runpipeline.sh Ecol Bsub Mgen Mpne
+
 args="$@"
+
 export BIN=$WDR/bin
 export DT=$WDR/data
 echo $args
@@ -50,4 +54,27 @@ do
         echo $FL;
         zcat $FL | head -2;
       }; done;
+done;
+echo ""
+
+function jellyfish_on_kmer () {
+  THYSPC=$1;
+  KMERSZ=$2;
+  echo "# ${THYSPC} - ${KMERSZ}" 1>&2;
+  zcat $DT/${THYSPC}_referencegenome.fa.gz | \
+    jellyfish count -m $KMERSZ -C -t 4 -c 8 -s 10000000 /dev/fd/0 \
+                -o $WDR/stats/${SPC}_jellyfish_k${KMERSZ}.counts;
+  jellyfish stats $WDR/stats/${SPC}_jellyfish_k${KMERSZ}.counts;
+  jellyfish stats $WDR/stats/${SPC}_jellyfish_k${KMERSZ}.counts >> $WDR/stats/jellyfish_total.count;
+}
+
+
+echo "Analysis of k-mer composition"
+for SPC in $args;
+do
+  for KSZ in 10 15 20;
+  do
+    echo "Analysis of "$SPC" K-mers with KSZ =" $KSZ;
+    jellyfish_on_kmer $SPC $KSZ;
+  done;
 done;

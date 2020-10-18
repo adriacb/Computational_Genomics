@@ -207,14 +207,12 @@ Let's start with the analyses, and may the shell be with you...
 
 Table \ref{tbl:genbankgenomesinfo} provides an overview of the four bacterial genomes we have to analyze on this exercise, for which we provide a short description here:.
 
-\begin{itemize}
-% IMPORTANT:
-%   do not use MarkDown marks inside a LaTeX block, as they will not be processed by pandoc
-\item \href{https://www.ncbi.nlm.nih.gov/genome/?term=escherichia%20coli}{\ecol} is typically present in the lower intestine of humans; is easily grown in a laboratory setting and also readily amenable to genetic manipulation, making it one of the most studied prokaryotic model organisms. We will work with this species representative genome, which is \href{https://www.ncbi.nlm.nih.gov/genome/167?genome_assembly_id=161521}{\ecol\ strain K-12 substr. MG1655}.
-\item \href{https://www.ncbi.nlm.nih.gov/genome/?term=bacillus%20subtilis}{\bsub} is a model organism for prokaryotic cell differentiation and development, and was one of the first bacteria studied. Representative genome for this species is \href{https://www.ncbi.nlm.nih.gov/genome/665?genome_assembly_id=300274}{\bsub\ subsp. \textit{subtilis} strain 168}.
-\item Mycoplasmas carry the smallest genomes of self-replicating cells together with the smallest set of functional coding regions; \href{https://www.ncbi.nlm.nih.gov/genome/?term=mycoplasma+genitalium}{\Mgen} genome was the second to be reported in 1995\footnote{"The minimal gene complement of \Mgen". Fraser CM, et al. \textit{Science}, 1995.}. The representative genome is \href{https://www.ncbi.nlm.nih.gov/genome/474?genome_assembly_id=300158}{\mgen\ G37}.
-\item \href{https://www.ncbi.nlm.nih.gov/genome/?term=mycoplasma+pneumoniae}{\mpne} causes respiratory tract infections. We are going to use \href{https://www.ncbi.nlm.nih.gov/genome/1028?genome_assembly_id=300492}{\mpne\ M129} as representative genome.
-\end{itemize}
+[\ecol](https://www.ncbi.nlm.nih.gov/genome/?term=escherichia%20coli) is typically present in the lower intestine of humans; is easily grown in a laboratory setting and also readily amenable to genetic manipulation, making it one of the most studied prokaryotic model organisms. We will work with this species representative genome, which is [\ecol\ strain K-12 substr. MG1655](https://www.ncbi.nlm.nih.gov/genome/167?genome_assembly_id=161521).
+[\bsub](https://www.ncbi.nlm.nih.gov/genome/?term=bacillus%20subtilis) is a model organism for prokaryotic cell differentiation and development, and was one of the first bacteria studied. Representative genome for this species is [\bsub\ subsp. \textit{subtilis} strain 168](https://www.ncbi.nlm.nih.gov/genome/665?genome_assembly_id=300274).
+Mycoplasmas carry the smallest genomes of self-replicating cells together with the smallest set of functional coding regions;
+[\Mgen](https://www.ncbi.nlm.nih.gov/genome/?term=mycoplasma+genitalium) genome was the second to be reported in 1995\footnote{"The minimal gene complement of \Mgen". Fraser CM, et al. \textit{Science}, 1995.}. The representative genome is [\mgen\ G37](https://www.ncbi.nlm.nih.gov/genome/474?genome_assembly_id=300158).
+[\mpne](https://www.ncbi.nlm.nih.gov/genome/?term=mycoplasma+pneumoniae) causes respiratory tract infections. We are going to use [\mpne\ M129](https://www.ncbi.nlm.nih.gov/genome/1028?genome_assembly_id=300492) as representative genome.
+
 
 It's time to get the sequences from a set of links we have retrieved from \GB\ genome division. We are not going to take just the sequences in `fasta` format, we will download them in \gb\ format this time.
 
@@ -306,6 +304,17 @@ zcat $DT/${SPC}_referencegenome.fa.gz | \
 #> NC_000913      4641652 50.79
 
 ### repeat the commands for the other three genomes ###
+
+# This part of the code can be found in runpipeline.sh
+# and calls the script raw_seq.sh
+
+echo "RAW FORMAT (FASTA)"
+for SPC in $args;
+do
+  . $WDR/bin/raw_seq.sh $SPC
+done
+echo ""
+
 ```
 
 From the output of the two commands, we can conclude that fasta sequence for the downloaded \ecol\ genome has the correct length, 4641652bp, and that the GC content is almost the same as the one reported on Table \ref{tbl:genbankgenomesinfo}, 50.79\% versus 50.8\% respectively (so the difference is due to rounding to one decimal position).
@@ -324,10 +333,23 @@ zcat $DT/${SPC}_referencegenome.fa.gz | \
         -goutfile $WDR/images/${SPC}_chaosplot
 
 ### repeat the commands for the other three genomes ###
+
+# Can be found in runpipeline.sh
+
+echo "CHAOS-PLOT"
+for SPC in $args;
+do
+  . $WDR/bin/chaos-plot.sh $SPC # this loop calls the function of above
+done
+echo ""
+
 ```
 
 You __must__ include here a \LaTeX\ figure, defined as a table of two rows and two columns containing the four `png` plots, using `input` to load an external `tex` file stored in the `docs` directory (we had already examples on the previous exercise, see for instance "`exercise_01/docs/fig_histograms.tex`").
 
+\input{images/chaosplot}
+\clearpage
+\newpage
 
 ### Computing GC content variation across the genome
 
@@ -432,6 +454,33 @@ ls -1 $WDR/stats/${SPC}_genomegcanalysis_wlen*.tbl.gz | \
 
 ```{.sh}
 ### repeat the commands for the other three genomes ###
+# provide execution permissions to the perl script
+chmod a+x $WDR/bin/genomicgcwindows.pl
+
+echo "Genomic GC Windows"
+for SPC in $args;
+do
+  for w in 100 200 500 1000 2000 5000 10000;
+  do
+    echo "Windows analysis of "$SPC" with windows length "$w;
+    zcat $DT/${SPC}_referencegenome.fa.gz | \
+    $WDR/bin/genomicgcwindows.pl $w - | \
+    gzip -c9 -> $WDR/stats/${SPC}_genomegcanalysis_wlen$w.tbl.gz;
+  done;
+done;
+echo ""
+
+echo "Checking output of Genomic GC Windows"
+for SPC in $args;
+do
+  ls -1 $WDR/stats/${SPC}_genomegcanalysis_wlen*.tbl.gz | \
+    while read FL;
+      do {
+        echo $FL;
+        zcat $FL | head -2;
+      }; done;
+done;
+echo ""
 ```
 
 We can plot each of those tables using the nucleotide positions on the X-axis and the computed GC content as Y-axes, those figures should be five times wider than taller that will allow us to stack them for comparing the results of the different window lengths.
@@ -473,9 +522,104 @@ ggsave("images/Ecol_genomegcanalysis_wlen100.png",
 
 Include here a figure combining the plots for the set of window lengths (100, 200, 500, 1000, 2000, 5000, and 10000). Then choose one of those windows lengths and provide the commands to analyze the other three genomic sequences. After that, you can include another figure stacking the results for that window length on all the genomes.
 
+\input{images/winlength}
+\clearpage
+\newpage
+
+\input{images/winlength_species}
+\clearpage
+\newpage
+
 
 ```{.r}
 ### repeat the commands for the other three genomes ###
+#!/usr/bin/Rscript
+#give permisions:
+#chmod +x R_plot_.r
+#execute:
+#./R_plot_.r Ecol Bsub Mgen Mpne
+
+args = commandArgs(trailingOnly=TRUE)
+for (SPC in args){
+  for (w in c(100, 200, 500, 1000, 2000, 5000, 10000)){
+    GC_avg <- 50.79; # the whole genome average GC content
+    d <- '/home/adria/Escritorio/Computational_genomics/exercise_02/stats/'
+    middle = '_genomegcanalysis_wlen'
+    extension = '.tbl.gz'
+    path<-(paste(d,as.character(SPC),middle,as.character(w),extension, sep=""))
+    print(path)
+    ZZ <- gzfile(path);
+    GC_w <- read.table(ZZ, header=FALSE);
+    colnames(GC_w) <- c("CHRid","NUCpos","GCpct");
+
+    summary(GC_w)
+
+    library(ggplot2);
+
+    G <- ggplot(GC_w, aes(x=NUCpos, y=GCpct)) +
+      geom_line(colour = "blue") +
+      theme_bw() +
+      geom_hline(yintercept=GC_avg, colour="red", linetype="dashed", size=1.5) +
+      ggtitle(paste("E.coli GC content over the genome (window length = ",w,"bp)")) +
+      labs(x="Genomic Coords (bp)", y="%GC Content");
+    dirs <-'/home/adria/Escritorio/Computational_genomics/exercise_02/images/'
+    mid2 <- '_genomegcanalysis_wlen'
+    ex <-'.png'
+    p <- (paste(dirs,SPC,mid2,w,ex,sep=''))
+    ggsave(p,plot=G, width=25, height=8, units="cm", dpi=600);
+
+  }
+}
+#!/usr/bin/Rscript
+#give permisions:
+#chmod +x R_plot_.r
+#execute:
+#./R_plot_.r Ecol Bsub Mgen Mpne
+
+args = commandArgs(trailingOnly=TRUE)
+#getwd()
+dir <- setwd('/home/adria/Escritorio/Computational_genomics/exercise_02/stats/')
+for (SPC in args){
+  if (SPC == "Ecol"){
+    GC_avg <- 50.79;}
+  else if (SPC=="Bsub"){
+    GC_avg <- 43.5;}
+  else if (SPC == "Mgen"){
+    GC_avg <- 31.7;}
+  else if (SPC == "Mpne"){
+    GC_avg <- 40.0;
+  }
+
+  for (w in c(100, 200, 500, 1000, 2000, 5000, 10000)){
+    #GC_avg <- 50.79; # the whole genome average GC content
+    d <- '/home/adria/Escritorio/Computational_genomics/exercise_02/stats/'
+    middle = '_genomegcanalysis_wlen'
+    extension = '.tbl.gz'
+    path<-(paste(d,as.character(SPC),middle,as.character(w),extension, sep=""))
+    print(path)
+    ZZ <- gzfile(path);
+    GC_w <- read.table(ZZ, header=FALSE);
+    colnames(GC_w) <- c("CHRid","NUCpos","GCpct");
+
+    summary(GC_w)
+
+    library(ggplot2);
+
+    G <- ggplot(GC_w, aes(x=NUCpos, y=GCpct)) +
+      geom_line(colour = "blue") +
+      theme_bw() +
+      geom_hline(yintercept=GC_avg, colour="red", linetype="dashed", size=1.5) +
+      ggtitle(paste(SPC,"GC content over the genome (window length = ",w,"bp)")) +
+      labs(x="Genomic Coords (bp)", y="%GC Content");
+    dirs <-'/home/adria/Escritorio/Computational_genomics/exercise_02/images/'
+    mid2 <- '_genomegcanalysis_wlen'
+    ex <-'.png'
+    p <- (paste(dirs,SPC,mid2,w,ex,sep=''))
+    ggsave(p,plot=G, width=25, height=8, units="cm", dpi=600);
+
+  }
+}
+
 ```
 
 
@@ -545,14 +689,63 @@ for SPC in Ecol Bsub;
 Try different *k*-mer sizes (i.e. 10, 15, 20, 25, 30, 35, and 40), on the genomic sequences of the four species and summarize them into another \LaTeX\ table to include below. You can take "`docs/tbl_genbank_summary_info_genomes.tex`" as example to create this table.
 
 
+\input{docs/genbank_summary_genomes}
+\clearpage
+\newpage
+I used the following script for this part, we can find more information in the file [runpipeline.sh]{#supl}:
+
 ```{.sh}
-### repeat the commands for the other three genomes ###
+#IT USES THE ARGUMENTS INPUTS FROM runpipeline.sh SCRIPT.
+
+function jellyfish_on_kmer () {
+  THYSPC=$1;
+  KMERSZ=$2;
+  echo "# ${THYSPC} - ${KMERSZ}" 1>&2;
+  zcat $DT/${THYSPC}_referencegenome.fa.gz | \
+    jellyfish count -m $KMERSZ -C -t 4 -c 8 -s 10000000 /dev/fd/0 \
+                -o $WDR/stats/${SPC}_jellyfish_k${KMERSZ}.counts;
+  jellyfish stats $WDR/stats/${SPC}_jellyfish_k${KMERSZ}.counts;
+  jellyfish stats $WDR/stats/${SPC}_jellyfish_k${KMERSZ}.counts >> $WDR/stats/jellyfish_total.count;
+}
+
+
+echo "Analysis of k-mer composition"
+for SPC in $args;
+do
+  for KSZ in 10 15 20;
+  do
+    echo "Analysis of "$SPC" K-mers with KSZ =" $KSZ;
+    jellyfish_on_kmer $SPC $KSZ;
+  done;
+done;
+
 ```
+
+I tried to plot the results from Jellyfish:
+
+\input{images/rplots}
+\clearpage
+\newpage
 
 # Discussion
 
 __IMPORTANT__ Discuss your results here (around 300 words). And remember to include in the Appendices section (see page \pageref{sec:appendices}), any extra script you wrote from this exercise `bin` folder using the `loadfile` macro. We can take advantage of the \LaTeX\ referencing capabilities, as described in the first exercise template.
 
+The chaos plot or CGR is based on recognizing patterns in the nucleotides sequences by considering DNA sequences as strings {A,C,T,G}. Oligomers and frequencies are written into the boxes and are visualized as white (none) or different intensities of black color (depending on its frequency).[1](https://doi.org/10.1093/nar/18.8.2163)
+
+After performing the chaos plot \pageref{fig:chaosplot} for each one of the species, we can see that E.col and B.sub have a lot of possible combinations of nucleotides, we can see very few white boxes, while Mgen and Mpne have a lot of white boxes in their plots. This means that the total amount of nucleotide combinations is expected to be smaller than Ecol and Bsub.
+
+I have performed the windows size analysis of the GC content for different species with different windows sizes \pageref{fig:winlength_species}. The size of the windows is an important factor to avoid some noise in the plot. It is better to work with the length of a window of 1000bp, as we can see in  \pageref{fig:winlength}, the fact that we choose 2000bp introduces some noise in Bsub and Ecol plots.
+
+For instance, we can see that Ecol does not have high repetitive peaks of GC content in the genome, it is more or less homogeneous. Bsub also has a few high peaks of GC content. Moreover, the other species (Mgen and Mpne) have a lot of variability in its GC content.
+
+On the other hand, we can see the analysis of k-mers for each specie \pageref{fig:rplots}. Since we know from the lectures, that 'Unique < Distinct < Total', we can say that this rule is applied in the results that we have found in the plot of the distribution of scores for each species.
+
+As we can see in the Figure 4.1 \pageref{fig:rplots}, Ecol and Bsub have more K-mers in comparison to Mgen and Mpne species, which may be because Ecol and bsub genomes are larger. This can be also seen in the chaos plot \pageref{fig:chaosplot}, since they have more dark boxes they should have more variation of nucleotides in its genome.
+
+The size of the k-mers seems to be visually significant since Ecol and Bsub have more k-mers of size 15 and 20 compared to all other species.
+
+In conclusion, we have seen that Ecol and Bsub are more complex organisms than Mgen and Mpne, Ecol and Bsub have more homogeneous GC content and more variability in its genome sequence. Moreover, Mgen and Mpne are more simple species, less homogeneous, and with less variability in its genome sequence.
 
 \clearpage
 
@@ -587,14 +780,19 @@ R --version
 ## Supplementary files
 \label{sec:supplfiles}
 
-### Project specific scripts
+### Project specific scripts {#supl}
 
-\loadfile{an\_script\_example.pl}{bin/an_script_example.pl}{prg:scriptexamplePERL}
-
+\loadfile{bin/runpipeline.sh}{bin/runpipeline.sh}{prg:unpipelineBASH}
+\loadfile{bin/genomicgcwindows.pl}{bin/genomicgcwindows.pl}{prg:genomicgcwindowsPERL}
+\loadfile{bin/chaos-plot.sh}{bin/chaos-plot.sh}{prg:chaos-plotBASH}
+\loadfile{bin/ret\_refgenomes.sh}{bin/ret_refgenomes.sh}{prg:retrefgenomesBASH}
+\loadfile{bin/raw\_seq.sh}{bin/raw_seq.sh}{prg:rawseqBASH}
+\loadfile{bin/R\_plot\_.r}{bin/R_plot_.r}{prg:RplotR}
 
 ### Shell global vars and settings for this project
 
 \loadfile{projectvars.sh}{projectvars.sh}{prg:projectvarsBASH}
+
 
 
 ## About this document

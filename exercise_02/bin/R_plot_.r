@@ -8,8 +8,18 @@ args = commandArgs(trailingOnly=TRUE)
 #getwd()
 dir <- setwd('/home/adria/Escritorio/Computational_genomics/exercise_02/stats/')
 for (SPC in args){
+  if (SPC == "Ecol"){
+    GC_avg <- 50.79;}
+  else if (SPC=="Bsub"){
+    GC_avg <- 43.5;}
+  else if (SPC == "Mgen"){
+    GC_avg <- 31.7;}
+  else if (SPC == "Mpne"){
+    GC_avg <- 40.0;
+  }
+          
   for (w in c(100, 200, 500, 1000, 2000, 5000, 10000)){
-    GC_avg <- 50.79; # the whole genome average GC content
+    #GC_avg <- 50.79; # the whole genome average GC content
     d <- '/home/adria/Escritorio/Computational_genomics/exercise_02/stats/'
     middle = '_genomegcanalysis_wlen'
     extension = '.tbl.gz'
@@ -27,7 +37,7 @@ for (SPC in args){
       geom_line(colour = "blue") +
       theme_bw() +
       geom_hline(yintercept=GC_avg, colour="red", linetype="dashed", size=1.5) +
-      ggtitle(paste("E.coli GC content over the genome (window length = ",w,"bp)")) +
+      ggtitle(paste(SPC,"GC content over the genome (window length = ",w,"bp)")) +
       labs(x="Genomic Coords (bp)", y="%GC Content");
     dirs <-'/home/adria/Escritorio/Computational_genomics/exercise_02/images/'
     mid2 <- '_genomegcanalysis_wlen'

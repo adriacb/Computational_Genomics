@@ -1,0 +1,31 @@
+%\input{docs/genbank_summary_genomes}
+
+% here we have an example of a latex formatted table
+\begin{table}[!h]
+\centering
+\newline
+\begin{tabular}{lccccc c ccccc}
+\hline
+Species/K-mers 10      & Unique  & Distinct & Total & Max count  \\ \hline\hline
+Ecol       & 40625 & 490389  & 4641643  & 284    \\
+Bsub & 47840 & 494580  & 4215597  & 333   \\
+Mgen & 87099 & 192529  & 580067  & 122  \\
+Mpne    & 123499 & 292158  & 816385  & 58    \\ \hline\hline
+Species/K-mers 15      & Unique  & Distinct & Total & Max count  \\ \hline\hline
+Ecol       & 4357730 & 4462229  & 4462229  & 10    \\
+Bsub & 4015017 & 4092956  & 4215592  & 20    \\
+Mgen & 550161 & 562149  & 580062  & 39  \\
+Mpne   & 740058 & 766612  & 816380  & 36    \\ \hline\hline
+Species/K-mers 20      & Unique  & Distinct & Total & Max count \\ \hline\hline
+Ecol       & 4507760 & 4542190  & 4641633  & 82  \\
+Bsub & 4143882 & 4159409  & 4215587  & 10  \\
+Mgen & 564076 & 569990  & 580057  & 31  \\
+Mpne   & 757793 & 778224  & 816375  & 15  \\ \hline\hline
+\end{tabular}
+
+\caption[Information about k-mers in 4 species from \GB.]{%
+\label{tbl:genbankgenomesinfo}\textbf{Information about K-mers in 4 species from \GB.} Summary table showing number of k-mers found with jellyfish software. Unique k-mers, distinct k-mers, total k-mers and max count.
+}%caption
+
+
+\end{table}

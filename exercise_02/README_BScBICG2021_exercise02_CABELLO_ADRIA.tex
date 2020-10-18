@@ -403,190 +403,260 @@ Table \ref{tbl:genbankgenomesinfo} provides an overview of the four
 bacterial genomes we have to analyze on this exercise, for which we
 provide a short description here:.
 
-\textbackslash{}begin\{itemize\} \% IMPORTANT: \% do not use MarkDown
-marks inside a LaTeX block, as they will not be processed by pandoc
-
-\item
-
-\textbackslash{}href\{https://www.ncbi.nlm.nih.gov/genome/?term=escherichia\%20coli\}\{\textit{E.~coli}\}
+\href{https://www.ncbi.nlm.nih.gov/genome/?term=escherichia\%20coli}{\textit{E.~coli}}
 is typically present in the lower intestine of humans; is easily grown
 in a laboratory setting and also readily amenable to genetic
 manipulation, making it one of the most studied prokaryotic model
 organisms. We will work with this species representative genome, which
 is
-\href{https://www.ncbi.nlm.nih.gov/genome/167?genome_assembly_id=161521}{\textit{E.~coli}\ strain K-12 substr. MG1655}.
+\href{https://www.ncbi.nlm.nih.gov/genome/167?genome_assembly_id=161521}{\textit{E.~coli}~strain
+K-12 substr. MG1655}.
+\href{https://www.ncbi.nlm.nih.gov/genome/?term=bacillus\%20subtilis}{\textit{B.~subtilis}}
+is a model organism for prokaryotic cell differentiation and
+development, and was one of the first bacteria studied. Representative
+genome for this species is
+\href{https://www.ncbi.nlm.nih.gov/genome/665?genome_assembly_id=300274}{\textit{B.~subtilis}~subsp.
+\textit{subtilis} strain 168}. Mycoplasmas carry the smallest genomes of
+self-replicating cells together with the smallest set of functional
+coding regions;
+\href{https://www.ncbi.nlm.nih.gov/genome/?term=mycoplasma+genitalium}{\textit{Mycoplasma genitalium}}
+genome was the second to be reported in
+1995\footnote{"The minimal gene complement of \textit{Mycoplasma genitalium}". Fraser CM, et al. \textit{Science}, 1995.}.
+The representative genome is
+\href{https://www.ncbi.nlm.nih.gov/genome/474?genome_assembly_id=300158}{\textit{M.~genitalium}~G37}.
+\href{https://www.ncbi.nlm.nih.gov/genome/?term=mycoplasma+pneumoniae}{\textit{M.~pneumoniae}}
+causes respiratory tract infections. We are going to use
+\href{https://www.ncbi.nlm.nih.gov/genome/1028?genome_assembly_id=300492}{\textit{M.~pneumoniae}~M129}
+as representative genome.
 
-\item
+It's time to get the sequences from a set of links we have retrieved
+from \href{https://www.ncbi.nlm.nih.gov/genome}{\textsc{GenBank}}~genome
+division. We are not going to take just the sequences in \texttt{fasta}
+format, we will download them in \textsc{GenBank}~format this time.
 
-\href{https://www.ncbi.nlm.nih.gov/genome/?term=bacillus%20subtilis}{\bsub} is a model organism for prokaryotic cell differentiation and development, and was one of the first bacteria studied. Representative genome for this species is \href{https://www.ncbi.nlm.nih.gov/genome/665?genome_assembly_id=300274}{\bsub\ subsp. \textit{subtilis} strain 168}.
-\item Mycoplasmas carry the smallest genomes of self-replicating cells together with the smallest set of functional coding regions; \href{https://www.ncbi.nlm.nih.gov/genome/?term=mycoplasma+genitalium}{\textit{Mycoplasma genitalium}} genome was the second to be reported in 1995\footnote{"The minimal gene complement of \textit{Mycoplasma genitalium}". Fraser CM, et al. \textit{Science}, 1995.}. The representative genome is \href{https://www.ncbi.nlm.nih.gov/genome/474?genome_assembly_id=300158}{\textit{M.~genitalium}\ G37}.
-\item \href{https://www.ncbi.nlm.nih.gov/genome/?term=mycoplasma+pneumoniae}{\textit{M.~pneumoniae}} causes respiratory tract infections. We are going to use \href{https://www.ncbi.nlm.nih.gov/genome/1028?genome_assembly_id=300492}{\textit{M.~pneumoniae}\ M129} as representative genome.
-\end{itemize}
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# IMPORTANT: ensure that your WDR variable definition in projectvars.sh}
+\CommentTok{#            does not contain a path having white-spaces on the folder names.}
 
-It's time to get the sequences from a set of links we have retrieved from \href{https://www.ncbi.nlm.nih.gov/genome}{\textsc{GenBank}}\ genome division. We are not going to take just the sequences in `fasta` format, we will download them in \textsc{GenBank}\ format this time.
+\BuiltInTok{export} \VariableTok{DT=$WDR}\NormalTok{/data}
+\FunctionTok{mkdir}\NormalTok{ -v }\VariableTok{$DT}
+\CommentTok{# You can also add the previous var definition to your 'projectvars.sh' file}
+\CommentTok{# so it will be saved and can be easily reused when sourcing the file again.}
 
-```{.sh}
-# IMPORTANT: ensure that your WDR variable definition in projectvars.sh
-#            does not contain a path having white-spaces on the folder names.
+\CommentTok{# Downloading the Ecol genome in GenBank format}
+\VariableTok{GBFTP=}\NormalTok{ftp://ftp.ncbi.nlm.nih.gov/genomes/all}
 
-export DT=$WDR/data
-mkdir -v $DT
-# You can also add the previous var definition to your 'projectvars.sh' file
-# so it will be saved and can be easily reused when sourcing the file again.
+\FunctionTok{wget} \VariableTok{$GBFTP}\NormalTok{/GCF/000/005/845/GCF_000005845.2_ASM584v2/GCF_000005845.2_ASM584v2_genomic.gbff.gz \textbackslash{}}
+\NormalTok{     -O }\VariableTok{$DT}\NormalTok{/Ecol_referencegenome.gb.gz}
 
-# Downloading the Ecol genome in GenBank format
-GBFTP=ftp://ftp.ncbi.nlm.nih.gov/genomes/all
+\CommentTok{# the other three genomes are available through the following paths:}
+\CommentTok{#}
+\CommentTok{#  Bsub GCF/000/009/045/GCF_000009045.1_ASM904v1/GCF_000009045.1_ASM904v1_genomic.gbff.gz}
+\CommentTok{#  Mgen GCF/000/027/325/GCF_000027325.1_ASM2732v1/GCF_000027325.1_ASM2732v1_genomic.gbff.gz}
+\CommentTok{#  Mpne GCF/000/027/345/GCF_000027345.1_ASM2734v1/GCF_000027345.1_ASM2734v1_genomic.gbff.gz}
+\CommentTok{#}
+\CommentTok{# save them as Bsub_referencegenome.gb.gz, Mgen_referencegenome.gb.gz,}
+\CommentTok{# and Mpne_referencegenome.gb.gz respectively.}
+\CommentTok{# For such a task, you can use a shell loop for instance:}
 
-wget $GBFTP/GCF/000/005/845/GCF_000005845.2_ASM584v2/GCF_000005845.2_ASM584v2_genomic.gbff.gz \
-     -O $DT/Ecol_referencegenome.gb.gz
+\KeywordTok{while} \BuiltInTok{read} \VariableTok{Ospc} \VariableTok{Gftp}\NormalTok{;}
+  \KeywordTok{do} \KeywordTok{\{}
+    \BuiltInTok{echo} \StringTok{"# Downloading genome sequence for }\VariableTok{$Ospc}\StringTok{"} \OperatorTok{1>&2}\KeywordTok{;}
+    \FunctionTok{wget} \VariableTok{$GBFTP}\NormalTok{/}\VariableTok{$\{Gftp\}}\NormalTok{_genomic.gbff.gz \textbackslash{}}
+\NormalTok{         -O }\VariableTok{$DT}\NormalTok{/}\VariableTok{$\{Ospc\}}\NormalTok{_referencegenome.gb.gz}
+  \KeywordTok{\}}\NormalTok{; }\KeywordTok{done} \OperatorTok{<<'EOF'}
+\NormalTok{Bsub GCF/000/009/045/GCF_000009045.1_ASM904v1/GCF_000009045.1_ASM904v1}
+\NormalTok{Mgen GCF/000/027/325/GCF_000027325.1_ASM2732v1/GCF_000027325.1_ASM2732v1}
+\NormalTok{Mpne GCF/000/027/345/GCF_000027345.1_ASM2734v1/GCF_000027345.1_ASM2734v1}
+\OperatorTok{EOF}
 
-# the other three genomes are available through the following paths:
-#
-#  Bsub GCF/000/009/045/GCF_000009045.1_ASM904v1/GCF_000009045.1_ASM904v1_genomic.gbff.gz
-#  Mgen GCF/000/027/325/GCF_000027325.1_ASM2732v1/GCF_000027325.1_ASM2732v1_genomic.gbff.gz
-#  Mpne GCF/000/027/345/GCF_000027345.1_ASM2734v1/GCF_000027345.1_ASM2734v1_genomic.gbff.gz
-#
-# save them as Bsub_referencegenome.gb.gz, Mgen_referencegenome.gb.gz,
-# and Mpne_referencegenome.gb.gz respectively.
-# For such a task, you can use a shell loop for instance:
+\CommentTok{### IMPORTANT }\AlertTok{NOTE}\CommentTok{ }\AlertTok{###}
+\CommentTok{#}
+\CommentTok{# If the firewall does not allow you to connect to the original NCBI ftp site}
+\CommentTok{# then you can run the following commands to download files from}
+\CommentTok{# the https alternate repository at compgen.bio.ub.edu server.}
+\CommentTok{# Just remind to replace the user and password strings with those}
+\CommentTok{# from the slides for the introduction to the practicals.}
+\CommentTok{#}
+\VariableTok{GBFTP=}\NormalTok{https://compgen.bio.ub.edu/~jabril/teaching/BScBI-CG2021/repo_ex2}
 
-while read Ospc Gftp;
-  do {
-    echo "# Downloading genome sequence for $Ospc" 1>&2;
-    wget $GBFTP/${Gftp}_genomic.gbff.gz \
-         -O $DT/${Ospc}_referencegenome.gb.gz
-  }; done <<'EOF'
-Bsub GCF/000/009/045/GCF_000009045.1_ASM904v1/GCF_000009045.1_ASM904v1
-Mgen GCF/000/027/325/GCF_000027325.1_ASM2732v1/GCF_000027325.1_ASM2732v1
-Mpne GCF/000/027/345/GCF_000027345.1_ASM2734v1/GCF_000027345.1_ASM2734v1
-EOF
+\KeywordTok{while} \BuiltInTok{read} \VariableTok{Ospc} \VariableTok{Gftp}\NormalTok{;}
+  \KeywordTok{do} \KeywordTok{\{}
+    \BuiltInTok{echo} \StringTok{"# Downloading genome sequence for }\VariableTok{$Ospc}\StringTok{"} \OperatorTok{1>&2}\KeywordTok{;}
+    \FunctionTok{wget}\NormalTok{ --user=}\StringTok{"UUUUUUUUUUUU"}\NormalTok{ \textbackslash{}}
+\NormalTok{         --password=}\StringTok{"XXXXXXXX"}\NormalTok{ \textbackslash{}}
+         \VariableTok{$GBFTP}\NormalTok{/}\VariableTok{$\{Ospc\}}\NormalTok{_referencegenome.gb.gz \textbackslash{}}
+\NormalTok{         -O }\VariableTok{$DT}\NormalTok{/}\VariableTok{$\{Ospc\}}\NormalTok{_referencegenome.gb.gz}
+  \KeywordTok{\}}\NormalTok{; }\KeywordTok{done} \OperatorTok{<<'EOF'}
+\NormalTok{Ecol GCF_000005845.2_ASM584v2}
+\NormalTok{Bsub GCF_000009045.1_ASM904v1}
+\NormalTok{Mgen GCF_000027325.1_ASM2732v1}
+\NormalTok{Mpne GCF_000027345.1_ASM2734v1}
+\OperatorTok{EOF}
+\end{Highlighting}
+\end{Shaded}
 
-### IMPORTANT NOTE ###
-#
-# If the firewall does not allow you to connect to the original NCBI ftp site
-# then you can run the following commands to download files from
-# the https alternate repository at compgen.bio.ub.edu server.
-# Just remind to replace the user and password strings with those
-# from the slides for the introduction to the practicals.
-#
-GBFTP=https://compgen.bio.ub.edu/~jabril/teaching/BScBI-CG2021/repo_ex2
+\hypertarget{retrieving-the-sequences}{%
+\subsection{Retrieving the sequences}\label{retrieving-the-sequences}}
 
-while read Ospc Gftp;
-  do {
-    echo "# Downloading genome sequence for $Ospc" 1>&2;
-    wget --user="UUUUUUUUUUUU" \
-         --password="XXXXXXXX" \
-         $GBFTP/${Ospc}_referencegenome.gb.gz \
-         -O $DT/${Ospc}_referencegenome.gb.gz
-  }; done <<'EOF'
-Ecol GCF_000005845.2_ASM584v2
-Bsub GCF_000009045.1_ASM904v1
-Mgen GCF_000027325.1_ASM2732v1
-Mpne GCF_000027345.1_ASM2734v1
-EOF
-```
+Let's extract the raw genomic sequences from the
+\textsc{GenBank}~formated files:
 
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# for manual pages on this emboss tool run:  tfm seqret}
+\CommentTok{#}
+\VariableTok{SPC=}\StringTok{"Ecol"}
 
-## Retrieving the sequences
+\FunctionTok{zcat} \VariableTok{$DT}\NormalTok{/}\VariableTok{$\{SPC\}}\NormalTok{_referencegenome.gb.gz }\KeywordTok{|} \KeywordTok{\textbackslash{}}
+  \ExtensionTok{seqret}\NormalTok{ -sequence genbank::stdin -outseq fasta::stdout }\KeywordTok{|} \KeywordTok{\textbackslash{}}
+    \FunctionTok{gzip}\NormalTok{ -9c - }\OperatorTok{>} \VariableTok{$DT}\NormalTok{/}\VariableTok{$\{SPC\}}\NormalTok{_referencegenome.fa.gz}
 
-Let's extract the raw genomic sequences from the \textsc{GenBank}\ formated files:
+\CommentTok{# let's verify if fasta sequence has same length as reported in the GenBank file}
 
+\FunctionTok{zegrep} \StringTok{'^LOCUS'}  \VariableTok{$DT}\NormalTok{/}\VariableTok{$\{SPC\}}\NormalTok{_referencegenome.gb.gz}
+\CommentTok{#> LOCUS       NC_000913            4641652 bp    DNA     circular CON 08-AUG-2016}
 
-```{.sh}
-# for manual pages on this emboss tool run:  tfm seqret
-#
-SPC="Ecol"
+\FunctionTok{zcat} \VariableTok{$DT}\NormalTok{/}\VariableTok{$\{SPC\}}\NormalTok{_referencegenome.fa.gz }\KeywordTok{|} \KeywordTok{\textbackslash{}}
+  \ExtensionTok{infoseq}\NormalTok{ -sequence fasta::stdin \textbackslash{}}
+\NormalTok{          -noheading -only -name -length -pgc}
+\CommentTok{#> Display basic information about sequences}
+\CommentTok{#> NC_000913      4641652 50.79}
 
-zcat $DT/${SPC}_referencegenome.gb.gz | \
-  seqret -sequence genbank::stdin -outseq fasta::stdout | \
-    gzip -9c - > $DT/${SPC}_referencegenome.fa.gz
+\CommentTok{### repeat the commands for the other three genomes }\AlertTok{###}
 
-# let's verify if fasta sequence has same length as reported in the GenBank file
+\CommentTok{# This part of the code can be found in runpipeline.sh}
+\CommentTok{# and calls the script raw_seq.sh}
 
-zegrep '^LOCUS'  $DT/${SPC}_referencegenome.gb.gz
-#> LOCUS       NC_000913            4641652 bp    DNA     circular CON 08-AUG-2016
+\BuiltInTok{echo} \StringTok{"RAW FORMAT (FASTA)"}
+\KeywordTok{for} \ExtensionTok{SPC}\NormalTok{ in }\VariableTok{$args}\KeywordTok{;}
+\KeywordTok{do}
+  \BuiltInTok{.} \VariableTok{$WDR}\ExtensionTok{/bin/raw_seq.sh} \VariableTok{$SPC}
+\KeywordTok{done}
+\BuiltInTok{echo} \StringTok{""}
+\end{Highlighting}
+\end{Shaded}
 
-zcat $DT/${SPC}_referencegenome.fa.gz | \
-  infoseq -sequence fasta::stdin \
-          -noheading -only -name -length -pgc
-#> Display basic information about sequences
-#> NC_000913      4641652 50.79
+From the output of the two commands, we can conclude that fasta sequence
+for the downloaded \textit{E.~coli}~genome has the correct length,
+4641652bp, and that the GC content is almost the same as the one
+reported on Table \ref{tbl:genbankgenomesinfo}, 50.79\% versus 50.8\%
+respectively (so the difference is due to rounding to one decimal
+position).
 
-### repeat the commands for the other three genomes ###
-```
+\hypertarget{summary-of-sequence-content}{%
+\subsection{Summary of sequence
+content}\label{summary-of-sequence-content}}
 
-From the output of the two commands, we can conclude that fasta sequence for the downloaded \textit{E.~coli}\ genome has the correct length, 4641652bp, and that the GC content is almost the same as the one reported on Table \ref{tbl:genbankgenomesinfo}, 50.79\% versus 50.8\% respectively (so the difference is due to rounding to one decimal position).
+\hypertarget{chaos-plot}{%
+\subsubsection{Chaos-plot}\label{chaos-plot}}
 
+\texttt{EMBOSS}~suite has a command to calculate
+\href{http://emboss.sourceforge.net/apps/cvs/emboss/apps/chaos.html}{chaos
+plots}, a simple graphical representation of sequence composition that
+we can use to visually compare the four genomes analyzed on this
+exercise.
 
-## Summary of sequence content
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{zcat} \VariableTok{$DT}\NormalTok{/}\VariableTok{$\{SPC\}}\NormalTok{_referencegenome.fa.gz }\KeywordTok{|} \KeywordTok{\textbackslash{}}
+  \ExtensionTok{chaos}\NormalTok{ -sequence fasta::stdin -verbose \textbackslash{}}
+\NormalTok{        -graph png -gtitle }\StringTok{"}\VariableTok{$SPC}\StringTok{ chaos plot"}\NormalTok{ \textbackslash{}}
+\NormalTok{        -goutfile }\VariableTok{$WDR}\NormalTok{/images/}\VariableTok{$\{SPC\}}\NormalTok{_chaosplot}
 
-### Chaos-plot
+\CommentTok{### repeat the commands for the other three genomes }\AlertTok{###}
 
-\texttt{EMBOSS}\ suite has a command to calculate [chaos plots](http://emboss.sourceforge.net/apps/cvs/emboss/apps/chaos.html), a simple graphical representation of sequence composition that we can use to visually compare the four genomes analyzed on this exercise.
+\CommentTok{# Can be found in runpipeline.sh}
 
-```{.sh}
-zcat $DT/${SPC}_referencegenome.fa.gz | \
-  chaos -sequence fasta::stdin -verbose \
-        -graph png -gtitle "$SPC chaos plot" \
-        -goutfile $WDR/images/${SPC}_chaosplot
+\BuiltInTok{echo} \StringTok{"CHAOS-PLOT"}
+\KeywordTok{for} \ExtensionTok{SPC}\NormalTok{ in }\VariableTok{$args}\KeywordTok{;}
+\KeywordTok{do}
+  \BuiltInTok{.} \VariableTok{$WDR}\ExtensionTok{/bin/chaos-plot.sh} \VariableTok{$SPC} \CommentTok{# this loop calls the function of above}
+\KeywordTok{done}
+\BuiltInTok{echo} \StringTok{""}
+\end{Highlighting}
+\end{Shaded}
 
-### repeat the commands for the other three genomes ###
-```
+You \textbf{must} include here a \LaTeX~figure, defined as a table of
+two rows and two columns containing the four \texttt{png} plots, using
+\texttt{input} to load an external \texttt{tex} file stored in the
+\texttt{docs} directory (we had already examples on the previous
+exercise, see for instance
+``\texttt{exercise\_01/docs/fig\_histograms.tex}'').
 
-You __must__ include here a \LaTeX\ figure, defined as a table of two rows and two columns containing the four `png` plots, using `input` to load an external `tex` file stored in the `docs` directory (we had already examples on the previous exercise, see for instance "`exercise_01/docs/fig_histograms.tex`").
+\input{images/chaosplot}
+\clearpage
+\newpage
 
+\hypertarget{computing-gc-content-variation-across-the-genome}{%
+\subsubsection{Computing GC content variation across the
+genome}\label{computing-gc-content-variation-across-the-genome}}
 
-### Computing GC content variation across the genome
+We will use a short script in \texttt{Perl} to calculate a parameter
+over the genome, GC content for instance, using a running window. You
+can try to rewrite in \texttt{Python} or any other programming language,
+but we should focus here on the effect of the window size on the final
+results. We define a short script in the following code chunk that you
+must copy into a file within the bin folder. It takes two parameters,
+the window length and the input sequence, so that you can play with
+several lengths to evaluate which one can provide the best comparison
+across genomes. Once you choose a window length on the
+\textit{Escherichia coli}~genome, you can run the same command fixing
+that parameter and changing the input file for the other three genomes.
 
-We will use a short script in `Perl` to calculate a parameter over the genome, GC content for instance, using a running window. You can try to rewrite in `Python` or any other programming language, but we should focus here on the effect of the window size on the final results. We define a short script in the following code chunk that you must copy into a file within the bin folder. It takes two parameters, the window length and the input sequence, so that you can play with several lengths to evaluate which one can provide the best comparison across genomes. Once you choose a window length on the \textit{Escherichia coli}\ genome, you can run the same command fixing that parameter and changing the input file for the other three genomes.
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{#!/usr/bin/perl}
+\CommentTok{#}
+\CommentTok{# you can save this script as "bin/genomicgcwindows.pl"}
+\CommentTok{#}
+\FunctionTok{use} \KeywordTok{strict}\NormalTok{;}
+\FunctionTok{use} \KeywordTok{warnings}\NormalTok{;}
 
-```{.perl}
-#!/usr/bin/perl
-#
-# you can save this script as "bin/genomicgcwindows.pl"
-#
-use strict;
-use warnings;
+\CommentTok{# variables initialization}
+\KeywordTok{my} \DataTypeTok{$window}\NormalTok{ = }\FunctionTok{shift} \DataTypeTok{@ARGV}\NormalTok{;}
+\DataTypeTok{$window}\NormalTok{ < }\DecValTok{10}\NormalTok{ && }\FunctionTok{die}\NormalTok{(}\KeywordTok{"}\StringTok{# ERROR: window length must be a positive integer equal or greater than 10}\CharTok{\textbackslash{}n}\KeywordTok{"}\NormalTok{);}
+\KeywordTok{my} \DataTypeTok{$step}\NormalTok{ = }\FunctionTok{int}\NormalTok{(}\DataTypeTok{$window}\NormalTok{ / }\DecValTok{2}\NormalTok{); }\CommentTok{# we have chosen to fix this parameter}
+\KeywordTok{my} \DataTypeTok{%SEQS}\NormalTok{ = (); }\CommentTok{# just in case there is more than one sequence on the input}
 
-# variables initialization
-my $window = shift @ARGV;
-$window < 10 && die("# ERROR: window length must be a positive integer equal or greater than 10\n");
-my $step = int($window / 2); # we have chosen to fix this parameter
-my %SEQS = (); # just in case there is more than one sequence on the input
+\CommentTok{# read sequences}
+\KeywordTok{my} \DataTypeTok{$sid}\NormalTok{ = }\FunctionTok{undef}\NormalTok{;}
+\KeywordTok{while}\NormalTok{ (<>) \{}
+    \KeywordTok{next} \KeywordTok{if} \KeywordTok{/}\CharTok{^}\BaseNTok{\textbackslash{}s}\CharTok{*$}\KeywordTok{/o}\NormalTok{;}
+    \FunctionTok{chomp}\NormalTok{;}
+    \DataTypeTok{$_}\NormalTok{ =~ }\KeywordTok{/}\CharTok{^}\OtherTok{>}\KeywordTok{/}\NormalTok{ && }\KeywordTok{do}\NormalTok{ \{  }\CommentTok{# finding the sequence header with its name}
+\NormalTok{        (}\DataTypeTok{$sid}\NormalTok{, }\FunctionTok{undef}\NormalTok{) = }\FunctionTok{split} \KeywordTok{/}\BaseNTok{\textbackslash{}s}\CharTok{+}\KeywordTok{/}\NormalTok{, }\DataTypeTok{$_}\NormalTok{;}
+        \FunctionTok{exists}\NormalTok{(}\DataTypeTok{$SEQS}\NormalTok{\{}\DataTypeTok{$sid}\NormalTok{\}) || (}\DataTypeTok{$SEQS}\NormalTok{\{}\DataTypeTok{$sid}\NormalTok{\} = }\KeywordTok{''}\NormalTok{);}
+        \KeywordTok{next}\NormalTok{;}
+\NormalTok{    \};}
+    \FunctionTok{defined}\NormalTok{(}\DataTypeTok{$sid}\NormalTok{) || }\KeywordTok{next}\NormalTok{;}
+    \DataTypeTok{$_}\NormalTok{ =~ }\KeywordTok{s/}\BaseNTok{\textbackslash{}s}\CharTok{+}\KeywordTok{//og}\NormalTok{; }\CommentTok{# just in case there are white spaces on the sequence}
+    \DataTypeTok{$SEQS}\NormalTok{\{}\DataTypeTok{$sid}\NormalTok{\} .= }\FunctionTok{uc}\NormalTok{(}\DataTypeTok{$_}\NormalTok{);}
+\NormalTok{\}; }\CommentTok{# while $_}
 
-# read sequences
-my $sid = undef;
-while (<>) {
-    next if /^\s*$/o;
-    chomp;
-    $_ =~ /^>/ && do {  # finding the sequence header with its name
-        ($sid, undef) = split /\s+/, $_;
-        exists($SEQS{$sid}) || ($SEQS{$sid} = '');
-        next;
-    };
-    defined($sid) || next;
-    $_ =~ s/\s+//og; # just in case there are white spaces on the sequence
-    $SEQS{$sid} .= uc($_);
-}; # while $_
+\CommentTok{# analyze sequences}
+\KeywordTok{foreach} \KeywordTok{my} \DataTypeTok{$sid}\NormalTok{ (}\FunctionTok{keys} \DataTypeTok{%SEQS}\NormalTok{) \{}
+    \KeywordTok{my} \DataTypeTok{$seq}\NormalTok{ = }\DataTypeTok{$SEQS}\NormalTok{\{}\DataTypeTok{$sid}\NormalTok{\};}
+    \KeywordTok{for}\NormalTok{ (}\KeywordTok{my} \DataTypeTok{$n}\NormalTok{ = }\DecValTok{0}\NormalTok{; }\DataTypeTok{$n}\NormalTok{ < }\FunctionTok{length}\NormalTok{(}\DataTypeTok{$seq}\NormalTok{) - }\DataTypeTok{$window}\NormalTok{ + }\DecValTok{1}\NormalTok{; }\DataTypeTok{$n}\NormalTok{ += }\DataTypeTok{$step}\NormalTok{) \{}
+        \KeywordTok{my} \DataTypeTok{$winseq}\NormalTok{ = }\FunctionTok{substr}\NormalTok{(}\DataTypeTok{$seq}\NormalTok{, }\DataTypeTok{$n}\NormalTok{, }\DataTypeTok{$window}\NormalTok{);}
+        \FunctionTok{printf} \KeywordTok{"}\DataTypeTok{%s}\StringTok{ }\DataTypeTok{%d}\StringTok{ %.1f}\CharTok{\textbackslash{}n}\KeywordTok{"}\NormalTok{, }\DataTypeTok{$sid}\NormalTok{, }\DataTypeTok{$n}\NormalTok{ + }\DataTypeTok{$step}\NormalTok{, &getGC(\textbackslash{}}\DataTypeTok{$winseq}\NormalTok{,}\DataTypeTok{$window}\NormalTok{);}
+\NormalTok{    \};}
+\NormalTok{\}; }\CommentTok{# foreach $sid}
 
-# analyze sequences
-foreach my $sid (keys %SEQS) {
-    my $seq = $SEQS{$sid};
-    for (my $n = 0; $n < length($seq) - $window + 1; $n += $step) {
-        my $winseq = substr($seq, $n, $window);
-        printf "%s %d %.1f\n", $sid, $n + $step, &getGC(\$winseq,$window);
-    };
-}; \# foreach \$sid
+\FunctionTok{exit}\NormalTok{(}\DecValTok{0}\NormalTok{);}
 
-exit(0);
-
-\hypertarget{available-functions}{%
-\section{available functions}\label{available-functions}}
-
-sub getGC() \{ my (\$sq, \$wn) = \citet{_}; my \$gc = 0; for (my \$c =
-0; \$c \textless{} \$wn; \$c++) \{ \(gc++ if substr(\)\$sq, \$c, 1)
-=\textasciitilde{} /{[}GC{]}/o; \}; \# for \$c return \$gc / \$wn * 100;
-\} \# getGC ```
+\CommentTok{# available functions}
+\KeywordTok{sub }\FunctionTok{getGC}\NormalTok{() \{}
+    \KeywordTok{my}\NormalTok{ (}\DataTypeTok{$sq}\NormalTok{, }\DataTypeTok{$wn}\NormalTok{) = }\DataTypeTok{@_}\NormalTok{;}
+    \KeywordTok{my} \DataTypeTok{$gc}\NormalTok{ = }\DecValTok{0}\NormalTok{;}
+    \KeywordTok{for}\NormalTok{ (}\KeywordTok{my} \DataTypeTok{$c}\NormalTok{ = }\DecValTok{0}\NormalTok{; }\DataTypeTok{$c}\NormalTok{ < }\DataTypeTok{$wn}\NormalTok{; }\DataTypeTok{$c}\NormalTok{++) \{}
+        \DataTypeTok{$gc}\NormalTok{++ }\KeywordTok{if} \FunctionTok{substr}\NormalTok{(}\DataTypeTok{$$sq}\NormalTok{, }\DataTypeTok{$c}\NormalTok{, }\DecValTok{1}\NormalTok{) =~ }\KeywordTok{/}\CharTok{[}\BaseNTok{GC}\CharTok{]}\KeywordTok{/o}\NormalTok{;}
+\NormalTok{    \}; }\CommentTok{# for $c}
+    \KeywordTok{return} \DataTypeTok{$gc}\NormalTok{ / }\DataTypeTok{$wn} \KeywordTok{*} \DecValTok{100}\NormalTok{;}
+\NormalTok{\} }\CommentTok{# getGC}
+\end{Highlighting}
+\end{Shaded}
 
 Let's run the \texttt{Perl} scrip on a set of increasing windows
 lengths.
@@ -640,6 +710,33 @@ lengths.
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{### repeat the commands for the other three genomes }\AlertTok{###}
+\CommentTok{# provide execution permissions to the perl script}
+\FunctionTok{chmod}\NormalTok{ a+x }\VariableTok{$WDR}\NormalTok{/bin/genomicgcwindows.pl}
+
+\BuiltInTok{echo} \StringTok{"Genomic GC Windows"}
+\KeywordTok{for} \ExtensionTok{SPC}\NormalTok{ in }\VariableTok{$args}\KeywordTok{;}
+\KeywordTok{do}
+  \KeywordTok{for} \FunctionTok{w}\NormalTok{ in 100 200 500 1000 2000 5000 10000}\KeywordTok{;}
+  \KeywordTok{do}
+    \BuiltInTok{echo} \StringTok{"Windows analysis of "}\VariableTok{$SPC}\StringTok{" with windows length "}\VariableTok{$w}\KeywordTok{;}
+    \FunctionTok{zcat} \VariableTok{$DT}\NormalTok{/}\VariableTok{$\{SPC\}}\NormalTok{_referencegenome.fa.gz }\KeywordTok{|} \KeywordTok{\textbackslash{}}
+    \VariableTok{$WDR}\ExtensionTok{/bin/genomicgcwindows.pl} \VariableTok{$w}\NormalTok{ - }\KeywordTok{|} \KeywordTok{\textbackslash{}}
+    \FunctionTok{gzip}\NormalTok{ -c9 -}\OperatorTok{>} \VariableTok{$WDR}\NormalTok{/stats/}\VariableTok{$\{SPC\}}\NormalTok{_genomegcanalysis_wlen}\VariableTok{$w}\NormalTok{.tbl.gz}\KeywordTok{;}
+  \KeywordTok{done}\NormalTok{;}
+\KeywordTok{done}\NormalTok{;}
+\BuiltInTok{echo} \StringTok{""}
+
+\BuiltInTok{echo} \StringTok{"Checking output of Genomic GC Windows"}
+\KeywordTok{for} \ExtensionTok{SPC}\NormalTok{ in }\VariableTok{$args}\KeywordTok{;}
+\KeywordTok{do}
+  \FunctionTok{ls}\NormalTok{ -1 }\VariableTok{$WDR}\NormalTok{/stats/}\VariableTok{$\{SPC\}}\NormalTok{_genomegcanalysis_wlen*.tbl.gz }\KeywordTok{|} \KeywordTok{\textbackslash{}}
+    \KeywordTok{while} \BuiltInTok{read} \VariableTok{FL}\NormalTok{;}
+      \KeywordTok{do} \KeywordTok{\{}
+        \BuiltInTok{echo} \VariableTok{$FL}\KeywordTok{;}
+        \FunctionTok{zcat} \VariableTok{$FL} \KeywordTok{|} \FunctionTok{head}\NormalTok{ -2}\KeywordTok{;}
+      \KeywordTok{\}}\NormalTok{; }\KeywordTok{done}\NormalTok{;}
+\KeywordTok{done}\NormalTok{;}
+\BuiltInTok{echo} \StringTok{""}
 \end{Highlighting}
 \end{Shaded}
 
@@ -691,9 +788,103 @@ windows lengths and provide the commands to analyze the other three
 genomic sequences. After that, you can include another figure stacking
 the results for that window length on all the genomes.
 
+\input{images/winlength}
+\clearpage
+\newpage
+
+\input{images/winlength_species}
+\clearpage
+\newpage
+
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{### repeat the commands for the other three genomes }\AlertTok{###}
+\CommentTok{#!/usr/bin/Rscript}
+\CommentTok{#give permisions:}
+\CommentTok{#chmod +x R_plot_.r}
+\CommentTok{#execute:}
+\CommentTok{#./R_plot_.r Ecol Bsub Mgen Mpne}
+
+\NormalTok{args =}\StringTok{ }\KeywordTok{commandArgs}\NormalTok{(}\DataTypeTok{trailingOnly=}\OtherTok{TRUE}\NormalTok{)}
+\ControlFlowTok{for}\NormalTok{ (SPC }\ControlFlowTok{in}\NormalTok{ args)\{}
+  \ControlFlowTok{for}\NormalTok{ (w }\ControlFlowTok{in} \KeywordTok{c}\NormalTok{(}\DecValTok{100}\NormalTok{, }\DecValTok{200}\NormalTok{, }\DecValTok{500}\NormalTok{, }\DecValTok{1000}\NormalTok{, }\DecValTok{2000}\NormalTok{, }\DecValTok{5000}\NormalTok{, }\DecValTok{10000}\NormalTok{))\{}
+\NormalTok{    GC_avg <-}\StringTok{ }\FloatTok{50.79}\NormalTok{; }\CommentTok{# the whole genome average GC content}
+\NormalTok{    d <-}\StringTok{ '/home/adria/Escritorio/Computational_genomics/exercise_02/stats/'}
+\NormalTok{    middle =}\StringTok{ '_genomegcanalysis_wlen'}
+\NormalTok{    extension =}\StringTok{ '.tbl.gz'}
+\NormalTok{    path<-(}\KeywordTok{paste}\NormalTok{(d,}\KeywordTok{as.character}\NormalTok{(SPC),middle,}\KeywordTok{as.character}\NormalTok{(w),extension, }\DataTypeTok{sep=}\StringTok{""}\NormalTok{))}
+    \KeywordTok{print}\NormalTok{(path)}
+\NormalTok{    ZZ <-}\StringTok{ }\KeywordTok{gzfile}\NormalTok{(path);}
+\NormalTok{    GC_w <-}\StringTok{ }\KeywordTok{read.table}\NormalTok{(ZZ, }\DataTypeTok{header=}\OtherTok{FALSE}\NormalTok{);}
+    \KeywordTok{colnames}\NormalTok{(GC_w) <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"CHRid"}\NormalTok{,}\StringTok{"NUCpos"}\NormalTok{,}\StringTok{"GCpct"}\NormalTok{);}
+
+    \KeywordTok{summary}\NormalTok{(GC_w)}
+
+    \KeywordTok{library}\NormalTok{(ggplot2);}
+
+\NormalTok{    G <-}\StringTok{ }\KeywordTok{ggplot}\NormalTok{(GC_w, }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x=}\NormalTok{NUCpos, }\DataTypeTok{y=}\NormalTok{GCpct)) }\OperatorTok{+}
+\StringTok{      }\KeywordTok{geom_line}\NormalTok{(}\DataTypeTok{colour =} \StringTok{"blue"}\NormalTok{) }\OperatorTok{+}
+\StringTok{      }\KeywordTok{theme_bw}\NormalTok{() }\OperatorTok{+}
+\StringTok{      }\KeywordTok{geom_hline}\NormalTok{(}\DataTypeTok{yintercept=}\NormalTok{GC_avg, }\DataTypeTok{colour=}\StringTok{"red"}\NormalTok{, }\DataTypeTok{linetype=}\StringTok{"dashed"}\NormalTok{, }\DataTypeTok{size=}\FloatTok{1.5}\NormalTok{) }\OperatorTok{+}
+\StringTok{      }\KeywordTok{ggtitle}\NormalTok{(}\KeywordTok{paste}\NormalTok{(}\StringTok{"E.coli GC content over the genome (window length = "}\NormalTok{,w,}\StringTok{"bp)"}\NormalTok{)) }\OperatorTok{+}
+\StringTok{      }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{x=}\StringTok{"Genomic Coords (bp)"}\NormalTok{, }\DataTypeTok{y=}\StringTok{"%GC Content"}\NormalTok{);}
+\NormalTok{    dirs <-}\StringTok{'/home/adria/Escritorio/Computational_genomics/exercise_02/images/'}
+\NormalTok{    mid2 <-}\StringTok{ '_genomegcanalysis_wlen'}
+\NormalTok{    ex <-}\StringTok{'.png'}
+\NormalTok{    p <-}\StringTok{ }\NormalTok{(}\KeywordTok{paste}\NormalTok{(dirs,SPC,mid2,w,ex,}\DataTypeTok{sep=}\StringTok{''}\NormalTok{))}
+    \KeywordTok{ggsave}\NormalTok{(p,}\DataTypeTok{plot=}\NormalTok{G, }\DataTypeTok{width=}\DecValTok{25}\NormalTok{, }\DataTypeTok{height=}\DecValTok{8}\NormalTok{, }\DataTypeTok{units=}\StringTok{"cm"}\NormalTok{, }\DataTypeTok{dpi=}\DecValTok{600}\NormalTok{);}
+
+\NormalTok{  \}}
+\NormalTok{\}}
+\CommentTok{#!/usr/bin/Rscript}
+\CommentTok{#give permisions:}
+\CommentTok{#chmod +x R_plot_.r}
+\CommentTok{#execute:}
+\CommentTok{#./R_plot_.r Ecol Bsub Mgen Mpne}
+
+\NormalTok{args =}\StringTok{ }\KeywordTok{commandArgs}\NormalTok{(}\DataTypeTok{trailingOnly=}\OtherTok{TRUE}\NormalTok{)}
+\CommentTok{#getwd()}
+\NormalTok{dir <-}\StringTok{ }\KeywordTok{setwd}\NormalTok{(}\StringTok{'/home/adria/Escritorio/Computational_genomics/exercise_02/stats/'}\NormalTok{)}
+\ControlFlowTok{for}\NormalTok{ (SPC }\ControlFlowTok{in}\NormalTok{ args)\{}
+  \ControlFlowTok{if}\NormalTok{ (SPC }\OperatorTok{==}\StringTok{ "Ecol"}\NormalTok{)\{}
+\NormalTok{    GC_avg <-}\StringTok{ }\FloatTok{50.79}\NormalTok{;\}}
+  \ControlFlowTok{else} \ControlFlowTok{if}\NormalTok{ (SPC}\OperatorTok{==}\StringTok{"Bsub"}\NormalTok{)\{}
+\NormalTok{    GC_avg <-}\StringTok{ }\FloatTok{43.5}\NormalTok{;\}}
+  \ControlFlowTok{else} \ControlFlowTok{if}\NormalTok{ (SPC }\OperatorTok{==}\StringTok{ "Mgen"}\NormalTok{)\{}
+\NormalTok{    GC_avg <-}\StringTok{ }\FloatTok{31.7}\NormalTok{;\}}
+  \ControlFlowTok{else} \ControlFlowTok{if}\NormalTok{ (SPC }\OperatorTok{==}\StringTok{ "Mpne"}\NormalTok{)\{}
+\NormalTok{    GC_avg <-}\StringTok{ }\FloatTok{40.0}\NormalTok{;}
+\NormalTok{  \}}
+
+  \ControlFlowTok{for}\NormalTok{ (w }\ControlFlowTok{in} \KeywordTok{c}\NormalTok{(}\DecValTok{100}\NormalTok{, }\DecValTok{200}\NormalTok{, }\DecValTok{500}\NormalTok{, }\DecValTok{1000}\NormalTok{, }\DecValTok{2000}\NormalTok{, }\DecValTok{5000}\NormalTok{, }\DecValTok{10000}\NormalTok{))\{}
+    \CommentTok{#GC_avg <- 50.79; # the whole genome average GC content}
+\NormalTok{    d <-}\StringTok{ '/home/adria/Escritorio/Computational_genomics/exercise_02/stats/'}
+\NormalTok{    middle =}\StringTok{ '_genomegcanalysis_wlen'}
+\NormalTok{    extension =}\StringTok{ '.tbl.gz'}
+\NormalTok{    path<-(}\KeywordTok{paste}\NormalTok{(d,}\KeywordTok{as.character}\NormalTok{(SPC),middle,}\KeywordTok{as.character}\NormalTok{(w),extension, }\DataTypeTok{sep=}\StringTok{""}\NormalTok{))}
+    \KeywordTok{print}\NormalTok{(path)}
+\NormalTok{    ZZ <-}\StringTok{ }\KeywordTok{gzfile}\NormalTok{(path);}
+\NormalTok{    GC_w <-}\StringTok{ }\KeywordTok{read.table}\NormalTok{(ZZ, }\DataTypeTok{header=}\OtherTok{FALSE}\NormalTok{);}
+    \KeywordTok{colnames}\NormalTok{(GC_w) <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"CHRid"}\NormalTok{,}\StringTok{"NUCpos"}\NormalTok{,}\StringTok{"GCpct"}\NormalTok{);}
+
+    \KeywordTok{summary}\NormalTok{(GC_w)}
+
+    \KeywordTok{library}\NormalTok{(ggplot2);}
+
+\NormalTok{    G <-}\StringTok{ }\KeywordTok{ggplot}\NormalTok{(GC_w, }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x=}\NormalTok{NUCpos, }\DataTypeTok{y=}\NormalTok{GCpct)) }\OperatorTok{+}
+\StringTok{      }\KeywordTok{geom_line}\NormalTok{(}\DataTypeTok{colour =} \StringTok{"blue"}\NormalTok{) }\OperatorTok{+}
+\StringTok{      }\KeywordTok{theme_bw}\NormalTok{() }\OperatorTok{+}
+\StringTok{      }\KeywordTok{geom_hline}\NormalTok{(}\DataTypeTok{yintercept=}\NormalTok{GC_avg, }\DataTypeTok{colour=}\StringTok{"red"}\NormalTok{, }\DataTypeTok{linetype=}\StringTok{"dashed"}\NormalTok{, }\DataTypeTok{size=}\FloatTok{1.5}\NormalTok{) }\OperatorTok{+}
+\StringTok{      }\KeywordTok{ggtitle}\NormalTok{(}\KeywordTok{paste}\NormalTok{(SPC,}\StringTok{"GC content over the genome (window length = "}\NormalTok{,w,}\StringTok{"bp)"}\NormalTok{)) }\OperatorTok{+}
+\StringTok{      }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{x=}\StringTok{"Genomic Coords (bp)"}\NormalTok{, }\DataTypeTok{y=}\StringTok{"%GC Content"}\NormalTok{);}
+\NormalTok{    dirs <-}\StringTok{'/home/adria/Escritorio/Computational_genomics/exercise_02/images/'}
+\NormalTok{    mid2 <-}\StringTok{ '_genomegcanalysis_wlen'}
+\NormalTok{    ex <-}\StringTok{'.png'}
+\NormalTok{    p <-}\StringTok{ }\NormalTok{(}\KeywordTok{paste}\NormalTok{(dirs,SPC,mid2,w,ex,}\DataTypeTok{sep=}\StringTok{''}\NormalTok{))}
+    \KeywordTok{ggsave}\NormalTok{(p,}\DataTypeTok{plot=}\NormalTok{G, }\DataTypeTok{width=}\DecValTok{25}\NormalTok{, }\DataTypeTok{height=}\DecValTok{8}\NormalTok{, }\DataTypeTok{units=}\StringTok{"cm"}\NormalTok{, }\DataTypeTok{dpi=}\DecValTok{600}\NormalTok{);}
+
+\NormalTok{  \}}
+\NormalTok{\}}
 \end{Highlighting}
 \end{Shaded}
 
@@ -778,11 +969,46 @@ another \LaTeX~table to include below. You can take
 ``\texttt{docs/tbl\_genbank\_summary\_info\_genomes.tex}'' as example to
 create this table.
 
+\input{docs/genbank_summary_genomes}
+\clearpage
+\newpage
+
+I used the following script for this part, we can find more information
+in the file \protect\hypertarget{supl}{}{runpipeline.sh}:
+
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{### repeat the commands for the other three genomes }\AlertTok{###}
+\CommentTok{#IT USES THE ARGUMENTS INPUTS FROM runpipeline.sh SCRIPT.}
+
+\KeywordTok{function}\FunctionTok{ jellyfish_on_kmer ()} \KeywordTok{\{}
+  \VariableTok{THYSPC=$1}\NormalTok{;}
+  \VariableTok{KMERSZ=$2}\NormalTok{;}
+  \BuiltInTok{echo} \StringTok{"# }\VariableTok{$\{THYSPC\}}\StringTok{ - }\VariableTok{$\{KMERSZ\}}\StringTok{"} \OperatorTok{1>&2}\KeywordTok{;}
+  \FunctionTok{zcat} \VariableTok{$DT}\NormalTok{/}\VariableTok{$\{THYSPC\}}\NormalTok{_referencegenome.fa.gz }\KeywordTok{|} \KeywordTok{\textbackslash{}}
+    \ExtensionTok{jellyfish}\NormalTok{ count -m }\VariableTok{$KMERSZ}\NormalTok{ -C -t 4 -c 8 -s 10000000 /dev/fd/0 \textbackslash{}}
+\NormalTok{                -o }\VariableTok{$WDR}\NormalTok{/stats/}\VariableTok{$\{SPC\}}\NormalTok{_jellyfish_k}\VariableTok{$\{KMERSZ\}}\NormalTok{.counts}\KeywordTok{;}
+  \ExtensionTok{jellyfish}\NormalTok{ stats }\VariableTok{$WDR}\NormalTok{/stats/}\VariableTok{$\{SPC\}}\NormalTok{_jellyfish_k}\VariableTok{$\{KMERSZ\}}\NormalTok{.counts}\KeywordTok{;}
+  \ExtensionTok{jellyfish}\NormalTok{ stats }\VariableTok{$WDR}\NormalTok{/stats/}\VariableTok{$\{SPC\}}\NormalTok{_jellyfish_k}\VariableTok{$\{KMERSZ\}}\NormalTok{.counts }\OperatorTok{>>} \VariableTok{$WDR}\NormalTok{/stats/jellyfish_total.count}\KeywordTok{;}
+\KeywordTok{\}}
+
+
+\BuiltInTok{echo} \StringTok{"Analysis of k-mer composition"}
+\KeywordTok{for} \ExtensionTok{SPC}\NormalTok{ in }\VariableTok{$args}\KeywordTok{;}
+\KeywordTok{do}
+  \KeywordTok{for} \ExtensionTok{KSZ}\NormalTok{ in 10 15 20}\KeywordTok{;}
+  \KeywordTok{do}
+    \BuiltInTok{echo} \StringTok{"Analysis of "}\VariableTok{$SPC}\StringTok{" K-mers with KSZ ="} \VariableTok{$KSZ}\KeywordTok{;}
+    \ExtensionTok{jellyfish_on_kmer} \VariableTok{$SPC} \VariableTok{$KSZ}\KeywordTok{;}
+  \KeywordTok{done}\NormalTok{;}
+\KeywordTok{done}\NormalTok{;}
 \end{Highlighting}
 \end{Shaded}
+
+I tried to plot the results from Jellyfish:
+
+\input{images/rplots}
+\clearpage
+\newpage
 
 \hypertarget{discussion}{%
 \section{Discussion}\label{discussion}}
@@ -793,6 +1019,54 @@ remember to include in the Appendices section (see page
 \texttt{bin} folder using the \texttt{loadfile} macro. We can take
 advantage of the \LaTeX~referencing capabilities, as described in the
 first exercise template.
+
+The chaos plot or CGR is based on recognizing patterns in the
+nucleotides sequences by considering DNA sequences as strings
+\{A,C,T,G\}. Oligomers and frequencies are written into the boxes and
+are visualized as white (none) or different intensities of black color
+(depending on its
+frequency).\href{https://doi.org/10.1093/nar/18.8.2163}{1}
+
+After performing the chaos plot \pageref{fig:chaosplot} for each one of
+the species, we can see that E.col and B.sub have a lot of possible
+combinations of nucleotides, we can see very few white boxes, while Mgen
+and Mpne have a lot of white boxes in their plots. This means that the
+total amount of nucleotide combinations is expected to be smaller than
+Ecol and Bsub.
+
+I have performed the windows size analysis of the GC content for
+different species with different windows sizes
+\pageref{fig:winlength_species}. The size of the windows is an important
+factor to avoid some noise in the plot. It is better to work with the
+length of a window of 1000bp, as we can see in \pageref{fig:winlength},
+the fact that we choose 2000bp introduces some noise in Bsub and Ecol
+plots.
+
+For instance, we can see that Ecol does not have high repetitive peaks
+of GC content in the genome, it is more or less homogeneous. Bsub also
+has a few high peaks of GC content. Moreover, the other species (Mgen
+and Mpne) have a lot of variability in its GC content.
+
+On the other hand, we can see the analysis of k-mers for each specie
+\pageref{fig:rplots}. Since we know from the lectures, that `Unique
+\textless{} Distinct \textless{} Total', we can say that this rule is
+applied in the results that we have found in the plot of the
+distribution of scores for each species.
+
+As we can see in the Figure 4.1 \pageref{fig:rplots}, Ecol and Bsub have
+more K-mers in comparison to Mgen and Mpne species, which may be because
+Ecol and bsub genomes are larger. This can be also seen in the chaos
+plot \pageref{fig:chaosplot}, since they have more dark boxes they
+should have more variation of nucleotides in its genome.
+
+The size of the k-mers seems to be visually significant since Ecol and
+Bsub have more k-mers of size 15 and 20 compared to all other species.
+
+In conclusion, we have seen that Ecol and Bsub are more complex
+organisms than Mgen and Mpne, Ecol and Bsub have more homogeneous GC
+content and more variability in its genome sequence. Moreover, Mgen and
+Mpne are more simple species, less homogeneous, and with less
+variability in its genome sequence.
 
 \clearpage
 
@@ -833,11 +1107,15 @@ We have used the following versions:
 
 \label{sec:supplfiles}
 
-\hypertarget{project-specific-scripts}{%
-\subsubsection{Project specific
-scripts}\label{project-specific-scripts}}
+\hypertarget{supl}{%
+\subsubsection{Project specific scripts}\label{supl}}
 
-\loadfile{an\_script\_example.pl}{bin/an_script_example.pl}{prg:scriptexamplePERL}
+\loadfile{bin/runpipeline.sh}{bin/runpipeline.sh}{prg:unpipelineBASH}
+\loadfile{bin/genomicgcwindows.pl}{bin/genomicgcwindows.pl}{prg:genomicgcwindowsPERL}
+\loadfile{bin/chaos-plot.sh}{bin/chaos-plot.sh}{prg:chaos-plotBASH}
+\loadfile{bin/ret\_refgenomes.sh}{bin/ret_refgenomes.sh}{prg:retrefgenomesBASH}
+\loadfile{bin/raw\_seq.sh}{bin/raw_seq.sh}{prg:rawseqBASH}
+\loadfile{bin/R\_plot\_.r}{bin/R_plot_.r}{prg:RplotR}
 
 \hypertarget{shell-global-vars-and-settings-for-this-project}{%
 \subsubsection{Shell global vars and settings for this
