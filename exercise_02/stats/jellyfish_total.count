@@ -16,56 +16,153 @@ Distinct:  4542190
 Total:     4641633
 Max_count: 82
 
+# Ecol - 25
+Unique:    4516906
+Distinct:  4548910
+Total:     4641628
+Max_count: 75
+
+# Ecol - 30
+Unique:    4522959
+Distinct:  4553477
+Total:     4641623
+Max_count: 48
+Analysis of Ecol K-mers with KSZ = 35
+# Ecol - 35
+Unique:    4527791
+Distinct:  4557129
+Total:     4641618
+Max_count: 42
+Analysis of Ecol K-mers with KSZ = 40
+# Ecol - 40
+Unique:    4531656
+Distinct:  4559993
+Total:     4641613
+Max_count: 12
+Analysis of Bsub K-mers with KSZ = 10
 # Bsub - 10
 Unique:    47840
 Distinct:  494580
 Total:     4215597
 Max_count: 333
-
+Analysis of Bsub K-mers with KSZ = 15
 # Bsub - 15
 Unique:    4015017
 Distinct:  4092956
 Total:     4215592
 Max_count: 20
-
+Analysis of Bsub K-mers with KSZ = 20
 # Bsub - 20
 Unique:    4143882
 Distinct:  4159409
 Total:     4215587
 Max_count: 10
-
+Analysis of Bsub K-mers with KSZ = 25
+# Bsub - 25
+Unique:    4147875
+Distinct:  4161803
+Total:     4215582
+Max_count: 10
+Analysis of Bsub K-mers with KSZ = 30
+# Bsub - 30
+Unique:    4150401
+Distinct:  4163405
+Total:     4215577
+Max_count: 10
+Analysis of Bsub K-mers with KSZ = 35
+# Bsub - 35
+Unique:    4152426
+Distinct:  4164735
+Total:     4215572
+Max_count: 10
+Analysis of Bsub K-mers with KSZ = 40
+# Bsub - 40
+Unique:    4154179
+Distinct:  4165907
+Total:     4215567
+Max_count: 10
+Analysis of Mgen K-mers with KSZ = 10
 # Mgen - 10
 Unique:    87099
 Distinct:  192529
 Total:     580067
 Max_count: 122
-
+Analysis of Mgen K-mers with KSZ = 15
 # Mgen - 15
 Unique:    550161
 Distinct:  562149
 Total:     580062
 Max_count: 39
-
+Analysis of Mgen K-mers with KSZ = 20
 # Mgen - 20
 Unique:    564076
 Distinct:  569990
 Total:     580057
 Max_count: 31
-
+Analysis of Mgen K-mers with KSZ = 25
+# Mgen - 25
+Unique:    566174
+Distinct:  571601
+Total:     580052
+Max_count: 20
+Analysis of Mgen K-mers with KSZ = 30
+# Mgen - 30
+Unique:    567957
+Distinct:  572877
+Total:     580047
+Max_count: 11
+Analysis of Mgen K-mers with KSZ = 35
+# Mgen - 35
+Unique:    569477
+Distinct:  573915
+Total:     580042
+Max_count: 8
+Analysis of Mgen K-mers with KSZ = 40
+# Mgen - 40
+Unique:    570718
+Distinct:  574743
+Total:     580037
+Max_count: 7
+Analysis of Mpne K-mers with KSZ = 10
 # Mpne - 10
 Unique:    123499
 Distinct:  292158
 Total:     816385
 Max_count: 58
-
+Analysis of Mpne K-mers with KSZ = 15
 # Mpne - 15
 Unique:    740058
 Distinct:  766612
 Total:     816380
 Max_count: 36
-
+Analysis of Mpne K-mers with KSZ = 20
 # Mpne - 20
 Unique:    757793
 Distinct:  778224
 Total:     816375
 Max_count: 15
+Analysis of Mpne K-mers with KSZ = 25
+# Mpne - 25
+Unique:    764947
+Distinct:  783662
+Total:     816370
+Max_count: 15
+Analysis of Mpne K-mers with KSZ = 30
+# Mpne - 30
+Unique:    770702
+Distinct:  787967
+Total:     816365
+Max_count: 14
+Analysis of Mpne K-mers with KSZ = 35
+# Mpne - 35
+Unique:    775615
+Distinct:  791523
+Total:     816360
+Max_count: 14
+Analysis of Mpne K-mers with KSZ = 40
+# Mpne - 40
+Unique:    779921
+Distinct:  794536
+Total:     816355
+Max_count: 14
+

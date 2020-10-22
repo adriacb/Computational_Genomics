@@ -72,7 +72,7 @@ function jellyfish_on_kmer () {
 echo "Analysis of k-mer composition"
 for SPC in $args;
 do
-  for KSZ in 10 15 20;
+  for KSZ in 10 15 20 25 30 35 40;
   do
     echo "Analysis of "$SPC" K-mers with KSZ =" $KSZ;
     jellyfish_on_kmer $SPC $KSZ;

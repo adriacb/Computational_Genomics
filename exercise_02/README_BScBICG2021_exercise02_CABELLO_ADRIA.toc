@@ -10,10 +10,10 @@
 \contentsline {subsubsection}{\numberline {2.3.1}Chaos-plot}{5}{subsubsection.2.3.1}
 \contentsline {subsubsection}{\numberline {2.3.2}Computing GC content variation across the genome}{6}{subsubsection.2.3.2}
 \contentsline {subsection}{\numberline {2.4}Analysis of \emph {k}-mer composition}{12}{subsection.2.4}
-\contentsline {section}{\numberline {3}Discussion}{15}{section.3}
-\contentsline {section}{\numberline {4}Appendices}{16}{section.4}
-\contentsline {subsection}{\numberline {4.1}Software}{16}{subsection.4.1}
-\contentsline {subsection}{\numberline {4.2}Supplementary files}{16}{subsection.4.2}
-\contentsline {subsubsection}{\numberline {4.2.1}Project specific scripts}{16}{subsubsection.4.2.1}
-\contentsline {subsubsection}{\numberline {4.2.2}Shell global vars and settings for this project}{20}{subsubsection.4.2.2}
-\contentsline {subsection}{\numberline {4.3}About this document}{21}{subsection.4.3}
+\contentsline {section}{\numberline {3}Discussion}{17}{section.3}
+\contentsline {section}{\numberline {4}Appendices}{18}{section.4}
+\contentsline {subsection}{\numberline {4.1}Software}{18}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Supplementary files}{18}{subsection.4.2}
+\contentsline {subsubsection}{\numberline {4.2.1}Project specific scripts}{18}{subsubsection.4.2.1}
+\contentsline {subsubsection}{\numberline {4.2.2}Shell global vars and settings for this project}{22}{subsubsection.4.2.2}
+\contentsline {subsection}{\numberline {4.3}About this document}{23}{subsection.4.3}

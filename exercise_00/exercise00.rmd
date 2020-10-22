@@ -1,0 +1,21 @@
+---
+title: "exercise00"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## EXERCISE00
+
+```{r}
+# if we have an uncompresed tabular file
+DATA <- read.table("stats/genomes.animals_only.tbl",
+header=FALSE, comment.char='#',
+col.names=c("SpeciesName","Superkingdom","TaxonGroup",
+"GenomeSize","ChromNum"));
+```
+
+
+

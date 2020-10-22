@@ -1,0 +1,71 @@
+---
+title: "plot_data"
+author: "Adrià Cabello Blanque"
+date: "10/3/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## VISUALIZING DATA
+```{r}
+DATA <- read.table("stats/genomes.animals_only.tbl",
+                    header=FALSE, comment.char='#',
+                    col.names=c("SpeciesName","Superkingdom","TaxonGroup",
+                                "GenomeSize","ChromNum"));
+```
+
+
+Let's calculate some stats on the dataset.
+
+```{r}
+options(width=180)
+summary(DATA)
+
+```
+
+Now, let's make an histogram of total lengths for the animal genomes:
+
+```{r}
+png(file="images/genome_length_animals.png");
+hist(DATA$GenomeSize);
+dev.off();
+```
+
+You can provide here the `bash` and `R` commands to generate the genome sizes histograms for plants and bacteria (archea not included). If you were able to perform and complete that task, you can play with the data after that and provide box-plots by taxonomic group showing the distribution of the genome sizes side-by-side.
+
+```{r}
+plants <- read.table("stats/genomes.plants_only.tbl",
+                    header=FALSE, comment.char='#',
+                    col.names=c("SpeciesName","Superkingdom","TaxonGroup",
+                                "GenomeSize","ChromNum"), sep = '\t');
+bacteria <- read.table("stats/genomes.bacteria.tbl",
+                    header=FALSE, comment.char='#',
+                    col.names=c("SpeciesName","Superkingdom","TaxonGroup",
+                                "GenomeSize","ChromNum"), sep = '\t');
+```
+
+```{r}
+head(bacteria)
+```
+```{r}
+#png(file = "images/plants.png")
+ggplot(plants, aes(GenomeSize, fill = TaxonGroup)) + geom_histogram(aes(y = stat(count) ), bins = 8, show.legend = TRUE)
+#dev.off()
+
+#png(file = "images/bacteria.png")
+ggplot(bacteria, aes(GenomeSize, fill= TaxonGroup)) +geom_histogram(aes(y = stat(count) ), bins = 8, show.legend = TRUE) + theme(legend.title = element_text(size = 3), 
+               legend.text = element_text(size = 3))
+#dev.off()
+```
+
+```{r}
+bacteria$TaxonGroup <- "Bacteria"
+merge <- do.call(rbind, list(DATA,plants, bacteria))
+png(file = "images/merge.png")
+boxplot(merge$GenomeSize~merge$TaxonGroup, xlab = "Taxonomical Group", ylab = 'Genome size', col = c('blue','green','red'))
+dev.off()
+```
+

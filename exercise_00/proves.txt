@@ -1,0 +1,12 @@
+gawk 'BEGIN{ FS=OFS="\t"; }
+$2 == "Eukaryota" && $3 == "Plants" {
+print $0;
+}' stats/genomes.tbl \
+> stats/genomes.plants_only.tbl
+
+
+gawk 'BEGIN{ FS=OFS="\t"; }
+$2 == "Bacteria" && ( $3 == "Terrabacteria group" || $3 == "Proteobacteria" || $3 == "unclassified" ) {
+print $0;
+}' stats/genomes.tbl \
+> stats/genomes.bacteria_only.tbl

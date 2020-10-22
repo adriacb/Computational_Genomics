@@ -1,0 +1,20 @@
+\contentsline {section}{\numberline {1}Introduction}{1}{section.1}
+\contentsline {subsection}{\numberline {1.1}Objectives}{1}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Prerequisites}{1}{subsection.1.2}
+\contentsline {subsubsection}{\numberline {1.2.1}Installing required software}{1}{subsubsection.1.2.1}
+\contentsline {paragraph}{\numberline {1.2.1.1}\textbf {Linux} users:}{1}{paragraph.1.2.1.1}
+\contentsline {paragraph}{\numberline {1.2.1.2}\textbf {MacOS} users:}{2}{paragraph.1.2.1.2}
+\contentsline {paragraph}{\numberline {1.2.1.3}Using \texttt {docker} containers:}{2}{paragraph.1.2.1.3}
+\contentsline {subsubsection}{\numberline {1.2.2}Initializing the main report files}{2}{subsubsection.1.2.2}
+\contentsline {section}{\numberline {2}Genome properties Comparison}{4}{section.2}
+\contentsline {subsection}{\numberline {2.1}Datasets}{4}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Basic data checks from command-line}{4}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Visualizing the analysis}{5}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.4}Further analyses}{7}{subsection.2.4}
+\contentsline {section}{\numberline {3}Discussion}{7}{section.3}
+\contentsline {section}{\numberline {4}Appendices}{11}{section.4}
+\contentsline {subsection}{\numberline {4.1}Software}{11}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Supplementary files}{11}{subsection.4.2}
+\contentsline {subsubsection}{\numberline {4.2.1}Project specific scripts}{11}{subsubsection.4.2.1}
+\contentsline {subsubsection}{\numberline {4.2.2}Shell global vars and settings for this project}{11}{subsubsection.4.2.2}
+\contentsline {subsection}{\numberline {4.3}About this document}{12}{subsection.4.3}

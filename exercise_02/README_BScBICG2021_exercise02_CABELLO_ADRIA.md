@@ -743,7 +743,7 @@ On the other hand, we can see the analysis of k-mers for each specie \pageref{fi
 
 As we can see in the Figure 4.1 \pageref{fig:rplots}, Ecol and Bsub have more K-mers in comparison to Mgen and Mpne species, which may be because Ecol and bsub genomes are larger. This can be also seen in the chaos plot \pageref{fig:chaosplot}, since they have more dark boxes they should have more variation of nucleotides in its genome.
 
-The size of the k-mers seems to be visually significant since Ecol and Bsub have more k-mers of size 15 and 20 compared to all other species.
+The size of the k-mers seems to be visually significant since Ecol and Bsub have more k-mers compared to all other species. Also, it is strange but Ecol has more k-mers of size 20 to 35 than of size 15.
 
 In conclusion, we have seen that Ecol and Bsub are more complex organisms than Mgen and Mpne, Ecol and Bsub have more homogeneous GC content and more variability in its genome sequence. Moreover, Mgen and Mpne are more simple species, less homogeneous, and with less variability in its genome sequence.
 

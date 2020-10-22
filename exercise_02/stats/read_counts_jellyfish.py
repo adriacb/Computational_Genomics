@@ -31,7 +31,7 @@ with open(args.filename) as file:
            chunk[specie][2] = t.group(1)
         m = re.match(r"Max_count: (.*)",line)
         if m:
-           
+
            chunk[specie][3] = m.group(1)
 
 for k in chunk:
